@@ -1,0 +1,5 @@
+Options +FollowSymlinks
+Options -MultiViews
+RewriteEngine On
+RewriteCond $1 !^(index.php)
+RewriteRule ^(.*)$ /estadia/index.php?$1 [L]
