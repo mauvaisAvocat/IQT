@@ -27,6 +27,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</nav>
 	<!-- /Navigation -->
 	<div class="container">
+		<div class="p-4 p-md-5 mb-4 text-dark rounded bg-light">
+			<img src="https://www.iqt.gob.mx/wp-content/themes/InstitutoQueretanoDelTransporte/images/logoTemporal.png" class="img-fluid" alt="">
+		</div>
 		<div class="row">
 			<div class="col-8">
 				Contenido
