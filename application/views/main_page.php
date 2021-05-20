@@ -2,117 +2,337 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta author="Andrea Suárez Mendoza">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-	</script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-	<title>Welcome!</title>
-</head>
-<body>
-	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<div class="container-fluid">
-			<a class="navbar-brand">
-				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwgbUlG1ZDqXC02eza0_hXdIqmeWg2Xb0Bj1EItxOcFgTct4hN5_Q6mALIvA5m3H_fgl0&usqp=CAU" alt="" width="50" height="44">
-			</a>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#">Directorio</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<!-- /Navigation -->
-	<div class="container">
-		<div class="p-4 p-md-5 mb-4 text-dark rounded bg-light">
-			<img src="https://www.iqt.gob.mx/wp-content/themes/InstitutoQueretanoDelTransporte/images/logoTemporal.png" class="img-fluid" alt="">
-		</div>
-		<div class="row">
-			<div class="col-8">
-				<div class="row" style="margin-bottom: 15px">
-					<div class="col-sm-6">
-						<div class="card text-white bg-secondary">
-							<div class="card-header">
-								Título
-							</div>
-							<div class="card-body text-dark bg-light">
-								<p class="card-text">Contenido</p>
-								<a href="#" class="card-link">Link</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="card text-white bg-secondary">
-							<div class="card-header">
-								Título 2
-							</div>
-							<div class="card-body text-dark bg-light">
-								<p class="card-text">Contenido</p>
-								<a href="#" class="card-link">Link 2</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="card text-white bg-secondary">
-							<div class="card-header">
-								Título3
-							</div>
-							<div class="card-body text-dark bg-light">
-								<p class="card-text">Contenido</p>
-								<a href="#" class="card-link">Link</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="card text-white bg-secondary">
-							<div class="card-header">
-								Título 4
-							</div>
-							<div class="card-body text-dark bg-light">
-								<p class="card-text">Contenido</p>
-								<a href="#" class="card-link">Link 2</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card text-white bg-dark mb-3">
-					<div class="card-header">
-						Login
-					</div>
-					<div class="card-body text-dark bg-light">
-						<form>
-							<div class="mb-3">
-								<label for="username" class="form-label">Username:</label>
-								<input type="text" class="form-control" name="user" id="user" placeholder="@ejemplo" required>
-								<div class="invalid-feedback">
-									Por favor ingresa el usuario.
-								</div>
-							</div>
-							<div class="mb-3">
-								<label for="password" class="form-label">Contraseña:</label>
-								<input type="password" class="form-control" name="pass" id="pass" placeholder="@Contraseña" required>
-								<div class="invalid-feedback">
-									Contraseña incorrecta.
-								</div>
-							</div>
-							<button class="btn btn-primary" type="submit">Iniciar sesión</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="Andrea Suárez Mendoza" />
+        <title>Business Frontpage - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="<?php base_url('static/assets/favicon.ico') ?>" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="<?php base_url('static/css/styles.css') ?>" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <div class="container px-5">
+                <a class="navbar-brand" href="#!">
+                	<img src="https://www.iqt.gob.mx/wp-content/themes/InstitutoQueretanoDelTransporte/images/logoTemporal.png" alt="" width="200" height="65">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Directorio</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="text-center my-5">
+                            <h1 class="display-5 fw-bolder text-white mb-2">Present your business in a whole new way</h1>
+                            <p class="lead text-white-50 mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit!</p>
+                            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
+                                <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Features section-->
+        <section class="py-5 border-bottom" id="features">
+            <div class="container px-5 my-5">
+                <div class="row gx-5">
+                    <div class="col-lg-3 mb-5 mb-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                        <h2 class="h4 fw-bolder">Featured title</h2>
+                        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                        <a class="text-decoration-none" href="#!">
+                            Call to action
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 mb-5 mb-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                        <h2 class="h4 fw-bolder">Featured title</h2>
+                        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                        <a class="text-decoration-none" href="#!">
+                            Call to action
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                        <h2 class="h4 fw-bolder">Featured title</h2>
+                        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                        <a class="text-decoration-none" href="#!">
+                            Call to action
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-lg-3">
+                    	<div class="card text-light bg-dark mb-3">
+                    		<div class="card-header">Login</div>
+                    		<div class="card-body">
+                    			<form id="login" action="<?php base_url() ?>main/enter" method="post"> 
+                    				<div class="mb-3">
+                    					<label for="inputUsername">Username</label>
+                    					<input class="form-control" type="text" name="username">
+                    				</div>
+                    				<div class="mb-3">
+                    					<label for="inputPassword">Password</label>
+                    					<input class="form-control" type="password" name="password">
+                    				</div>
+                    				<button class="btn btn-primary" type="submit">Iniciar sesión</button>
+                    			</form>
+                    		</div>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Pricing section-->
+        <section class="bg-light py-5 border-bottom">
+            <div class="container px-5 my-5">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bolder">Pay as you grow</h2>
+                    <p class="lead mb-0">With our no hassle pricing plans</p>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <!-- Pricing card free-->
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="card mb-5 mb-xl-0">
+                            <div class="card-body p-5">
+                                <div class="small text-uppercase fw-bold text-muted">Free</div>
+                                <div class="mb-3">
+                                    <span class="display-4 fw-bold">$0</span>
+                                    <span class="text-muted">/ mo.</span>
+                                </div>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        <strong>1 users</strong>
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        5GB storage
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Unlimited public projects
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Community access
+                                    </li>
+                                    <li class="mb-2 text-muted">
+                                        <i class="bi bi-x"></i>
+                                        Unlimited private projects
+                                    </li>
+                                    <li class="mb-2 text-muted">
+                                        <i class="bi bi-x"></i>
+                                        Dedicated support
+                                    </li>
+                                    <li class="mb-2 text-muted">
+                                        <i class="bi bi-x"></i>
+                                        Free linked domain
+                                    </li>
+                                    <li class="text-muted">
+                                        <i class="bi bi-x"></i>
+                                        Monthly status reports
+                                    </li>
+                                </ul>
+                                <div class="d-grid"><a class="btn btn-outline-primary" href="#!">Choose plan</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pricing card pro-->
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="card mb-5 mb-xl-0">
+                            <div class="card-body p-5">
+                                <div class="small text-uppercase fw-bold">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    Pro
+                                </div>
+                                <div class="mb-3">
+                                    <span class="display-4 fw-bold">$9</span>
+                                    <span class="text-muted">/ mo.</span>
+                                </div>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        <strong>5 users</strong>
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        5GB storage
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Unlimited public projects
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Community access
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Unlimited private projects
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Dedicated support
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Free linked domain
+                                    </li>
+                                    <li class="text-muted">
+                                        <i class="bi bi-x"></i>
+                                        Monthly status reports
+                                    </li>
+                                </ul>
+                                <div class="d-grid"><a class="btn btn-primary" href="#!">Choose plan</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pricing card enterprise-->
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="card">
+                            <div class="card-body p-5">
+                                <div class="small text-uppercase fw-bold text-muted">Enterprise</div>
+                                <div class="mb-3">
+                                    <span class="display-4 fw-bold">$49</span>
+                                    <span class="text-muted">/ mo.</span>
+                                </div>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        <strong>Unlimited users</strong>
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        5GB storage
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Unlimited public projects
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Community access
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Unlimited private projects
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Dedicated support
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check text-primary"></i>
+                                        <strong>Unlimited</strong>
+                                        linked domains
+                                    </li>
+                                    <li class="text-muted">
+                                        <i class="bi bi-check text-primary"></i>
+                                        Monthly status reports
+                                    </li>
+                                </ul>
+                                <div class="d-grid"><a class="btn btn-outline-primary" href="#!">Choose plan</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials section-->
+        <section class="py-5 border-bottom">
+            <div class="container px-5 my-5 px-5">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bolder">Customer testimonials</h2>
+                    <p class="lead mb-0">Our customers love working with us</p>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6">
+                        <!-- Testimonial 1-->
+                        <div class="card mb-4">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">Thank you for putting together such a great product. We loved working with you and the whole team, and we will be recommending you to others!</p>
+                                        <div class="small text-muted">- Client Name, Location</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2-->
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">The whole team was a huge help with putting things together for our company and brand. We will be hiring them again in the near future for additional work!</p>
+                                        <div class="small text-muted">- Client Name, Location</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact section-->
+        <section class="bg-light py-5">
+            <div class="container px-5 my-5 px-5">
+                <div class="text-center mb-5">
+                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+                    <h2 class="fw-bolder">Get in touch</h2>
+                    <p class="lead mb-0">We'd love to hear from you</p>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6">
+                        <form>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="inputName" type="text" placeholder="Enter your name..." />
+                                <label for="inputName">Full name</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
+                                <label for="inputEmail">Email address</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="inputPhone" type="tel" placeholder="(123) 456-7890" />
+                                <label for="inputPhone">Phone number</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="inputMessage" type="text" placeholder="Enter your message here..." style="height: 10rem"></textarea>
+                                <label for="inputMessage">Message</label>
+                            </div>
+                            <div class="d-grid"><button class="btn btn-primary btn-lg" type="submit">Submit</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>
