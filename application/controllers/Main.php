@@ -14,27 +14,56 @@ class Main extends CI_Controller {
 		$this->load->view('main_page');
 	}
 
-	public function enter() {
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
-		$resp = $this->Login_model->login($username, $password);
+	public function login_validation()
+	{
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('username', 'Username', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required');
 
-		if ($resp) {
-			$data = array(
-				"id" => $resp->id,
-				"username" => $resp->username,
-				"login" => TRUE
-			);
+		if ($this->form_validation->run())
+		{
+			$username = $this->input->post('username');
+			$password = $this->input->post('password');
+			$resp = $this->Login_model->login($username, $password);
 
-			$this->session->set_userdata($data);
-			$this->load->view('home');
+			if ($resp) 
+			{
+				$data = array(
+					"id" => $resp->id,
+					"username" => $resp->username,
+					"login" => TRUE
+				);
+
+				$this->session->set_userdata($data);
+				redirect(base_url() . 'main/enter');
+			}
+			else
+			{
+				$this->session->set_flashdata('error', 'Username y password invalidos');
+				redirect(base_url());
+			}
 		}
-		else {
-			echo "error";
+		else
+		{
+			$this->index();
 		}
 	}
 
-	public function logout() {
+	public function enter() {
+		if ($this->session->userdata('username') != '') 
+		{
+			echo '<h2>Welcome - '. $this->session->userdata('username') .' </h2>';
+			echo '<a href="'. base_url() .'main/logout">Logout</a>';	
+		}
+		else 
+		{
+			redirect(base_url());
+		}
+	}
 
+	public function logout()
+	{
+		$this->session->unset_userdata('username');
+		redirect(base_url());
 	}
 }

@@ -7,6 +7,7 @@ class Login_model extends CI_Model {
 		$this->db->where('username', $username);
 		$this->db->where('password', $password);
 		$result = $this->db->get('usuario');
+		
 		if ($result->num_rows() > 0) {
 			return $result->row();
 		}
@@ -14,5 +15,7 @@ class Login_model extends CI_Model {
 			return false;
 		}
 	}
+
+	
 }
 ?>
