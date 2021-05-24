@@ -12,18 +12,24 @@ class Main extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->view('main_header');
 		$this->load->view('main_page');
+		$this->load->view('main_footer');
 		$this->load->helper('url');
 	}
 
 	public function directory_view()
 	{
+		$this->load->view('main_header');
 		$this->load->view('directory');
+		$this->load->view('main_footer');
 	}
 
 	public function contact_view()
 	{
+		$this->load->view('main_header');
 		$this->load->view('contact');
+		$this->load->view('main_footer');
 	}
 
 	public function login_validation()
@@ -78,5 +84,68 @@ class Main extends CI_Controller {
 	{
 		$this->session->unset_userdata('username');
 		redirect(base_url());
+	}
+
+	public function user_settings()
+	{
+		$id = $this->session->userdata('id');
+		$res = $this->Login_model->get_user($id);
+		$data = array(
+			"address" => $res->domicilio,
+			"phone" => $res->telefono,
+			"extension" => $res->extension,
+			"rfc" => $res->rfc,
+			"curp" => $res->curp,
+			"password" => $res->password
+		);
+
+		$this->load->view('private/header');
+		$this->load->view('private/profile', $data);
+		$this->load->view('private/footer');
+	}
+
+	public function edit_user()
+	{
+		$id = $this->session->userdata('id');
+		$address = $this->input->post('address');
+		$phone = $this->input->post('phone');
+		$extension = $this->input->post('extension');
+		$rfc = $this->input->post('rfc');
+		$curp = $this->input->post('curp');
+		$password = $this->input->post('password');
+		$data = array(
+			"domicilio" => $address,
+			"telefono" => $phone,
+			"extension" => $extension,
+			"rfc" => $rfc,
+			"curp" => $curp,
+			"password" => $password
+		);		
+		$resp = $this->Login_model->update_user($id, $data);
+		redirect(base_url(). 'main/user_settings');
+	}
+
+	public function show_user()
+	{
+		$res = $this->Login_model->get_user($this->session->userdata('id'));
+		$data = array(
+			"username" => $res->username,
+			"address" => $res->domicilio,
+			"phone" => $res->telefono,
+			"extension" => $res->extension,
+			"rfc" => $res->rfc,
+			"curp" => $res->curp
+		);
+
+		$this->load->view('private/header');
+		$this->load->view('private/user_data', $data);
+		$this->load->view('private/footer');
+	}
+
+	public function files()
+	{
+		$this->load->view('private/header');
+		$this->load->view('private/files');
+		$this->load->view('private/footer');
 	}
 }
