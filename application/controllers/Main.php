@@ -7,11 +7,23 @@ class Main extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Login_model');
 		$this->load->library('encryption');
+
 	}
 
 	public function index()
 	{
 		$this->load->view('main_page');
+		$this->load->helper('url');
+	}
+
+	public function directory_view()
+	{
+		$this->load->view('directory');
+	}
+
+	public function contact_view()
+	{
+		$this->load->view('contact');
 	}
 
 	public function login_validation()
@@ -39,7 +51,7 @@ class Main extends CI_Controller {
 			}
 			else
 			{
-				$this->session->set_flashdata('error', 'Username y password invalidos');
+				$this->session->set_flashdata('error', '<span class="text-danger"><br>Username y password invalidos</span>');
 				redirect(base_url());
 			}
 		}
@@ -52,8 +64,9 @@ class Main extends CI_Controller {
 	public function enter() {
 		if ($this->session->userdata('username') != '') 
 		{
-			echo '<h2>Welcome - '. $this->session->userdata('username') .' </h2>';
-			echo '<a href="'. base_url() .'main/logout">Logout</a>';	
+			$this->load->view('private/header');
+			$this->load->view('private/tables');
+			$this->load->view('private/footer');	
 		}
 		else 
 		{
