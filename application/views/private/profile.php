@@ -16,27 +16,27 @@
                     <form action="<?php base_url() ?>edit_user" method="post">
                         <div class="mb-3">
                             <label for="inputAddress">Domicilio:</label>
-                            <input class="form-control" type="text" name="address" value="<?= $address ?>">
+                            <input id="address" class="form-control" type="text" name="address" value="<?= $address ?>">
                         </div>
                         <div class="mb-3">
                             <label for="inputPhone">Teléfono:</label>
-                            <input class="form-control" type="number" name="phone" value="<?= $phone ?>">
+                            <input id="phone" class="form-control" type="number" name="phone" value="<?= $phone ?>">
                         </div>
                         <div class="mb-3">
                             <label for="inputExtension">Extensión:</label>
-                            <input class="form-control" type="number" name="extension" value="<?= $extension ?>">
+                            <input id="extension" class="form-control" type="number" name="extension" value="<?= $extension ?>">
                         </div>
                         <div class="mb-3">
                             <label for="inputRFC">RFC:</label>
-                            <input class="form-control" type="text" name="rfc" value="<?= $rfc ?>">
+                            <input id="rfc" class="form-control" type="text" name="rfc" value="<?= $rfc ?>">
                         </div>
                         <div class="mb-3">
                             <label for="inputCurp">CURP:</label>
-                            <input class="form-control" type="text" name="curp" value="<?= $curp ?>">
+                            <input id="curp" class="form-control" type="text" name="curp" value="<?= $curp ?>">
                         </div>
                         <div class="mb-3">
                             <label for="inputPassword">Cambiar password:</label>
-                            <input class="form-control" type="password" name="password" value="<?= $password ?>">
+                            <input id="password" class="form-control" type="password" name="password" value="<?= $password ?>">
                         </div>
                         <button class="btn btn-success" type="submit">Guardar cambios</button>
                     </form>

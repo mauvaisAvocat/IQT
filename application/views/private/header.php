@@ -14,6 +14,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="<?php base_url() ?>../static/css/dashboard/data_table.css" rel="stylesheet" type="text/css">
     <link href="<?php base_url() ?>../static/css/dashboard/styles_dashboard.css" rel="stylesheet" type="text/css" />
     <script src="<?php base_url(); ?>../static/js/all.min.js"></script>
+    <script type="text/javascript" src="<?php base_url() ?>../static/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="<?php base_url() ?>../static/js/search.js"></script>
+    <script type="text/javascript" src="<?php base_url() ?>../static/js/profile_form.js"></script>
+    <script type="text/javascript" src="<?php base_url() ?>../static/js/files.js"></script>
 </head>
 
 <body class="sb-nav-fixed">
@@ -92,8 +96,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
-                    <div class="small">Logged in as:</div>
-                    Start Bootstrap
+                    <form class="d-flex" method="post" action="">
+                        <input id="search" class="form-control me-2" type="search" name="search" placeholder="Search..." aria-label="Search"> 
+                        <button id="search-document" class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
                 </div>
             </nav>
         </div>

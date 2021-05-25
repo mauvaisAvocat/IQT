@@ -20,14 +20,12 @@ class Main extends CI_Controller {
 
 	public function directory_view()
 	{
-		$this->load->view('main_header');
 		$this->load->view('directory');
 		$this->load->view('main_footer');
 	}
 
 	public function contact_view()
 	{
-		$this->load->view('main_header');
 		$this->load->view('contact');
 		$this->load->view('main_footer');
 	}

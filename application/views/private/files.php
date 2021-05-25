@@ -1,3 +1,4 @@
+
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
@@ -7,7 +8,7 @@
                 <li class="breadcrumb-item active">Archivos</li>
             </ol>
             <div class="card mb-4">
-                <div class="card-body">
+                <div id="show-pdf" class="card-body">
                     
                 </div>
             </div>
