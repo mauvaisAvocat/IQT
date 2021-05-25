@@ -146,4 +146,11 @@ class Main extends CI_Controller {
 		$this->load->view('private/files');
 		$this->load->view('private/footer');
 	}
+
+	public function carpeta1_file()
+	{
+		$this->load->view('private/header');
+		$this->load->view('private/carpeta1_file');
+		$this->load->view('private/footer');
+	}
 }
