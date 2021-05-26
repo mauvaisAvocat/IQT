@@ -1,7 +1,7 @@
 $( document ).ready( function(){
 	$( '#search-document' ).click( function(e){
 		e.preventDefault();
-		var $inputSearch = $( '#search' ).val();
+		var $inputSearch = $( '#search-menu' ).val();
 		alert($inputSearch);
 	});
 });

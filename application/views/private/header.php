@@ -13,11 +13,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <link href="<?php base_url() ?>../static/css/dashboard/data_table.css" rel="stylesheet" type="text/css">
     <link href="<?php base_url() ?>../static/css/dashboard/styles_dashboard.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="<?php base_url() ?>../static/css/styles_files_menu.css">
+    
     <script src="<?php base_url(); ?>../static/js/all.min.js"></script>
     <script type="text/javascript" src="<?php base_url() ?>../static/js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="<?php base_url() ?>../static/js/search.js"></script>
     <script type="text/javascript" src="<?php base_url() ?>../static/js/profile_form.js"></script>
     <script type="text/javascript" src="<?php base_url() ?>../static/js/files.js"></script>
+    <script type="text/javascript" src="<?php base_url() ?>../static/js/files_menu.js"></script>
 </head>
 
 <body class="sb-nav-fixed">
@@ -62,25 +64,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                    Authentication
+                                    Carpeta 1
                                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                 </a>
                                 <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="<?php base_url() ?>carpeta1_file">Login</a>
-                                        <a class="nav-link" href="register.html">Register</a>
-                                        <a class="nav-link" href="password.html">Forgot Password</a>
+                                        <a class="nav-link" href="<?php base_url() ?>carpeta1_file">Carpeta 1.1</a>
+                                        <a class="nav-link" href="<?php base_url() ?>files_menu">Carpeta 1.2</a>
+                                        <a class="nav-link" href="#!">Carpeta 1.3</a>
                                     </nav>
                                 </div>
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                    Error
+                                    Carpeta 2
                                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                 </a>
                                 <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="401.html">401 Page</a>
-                                        <a class="nav-link" href="404.html">404 Page</a>
-                                        <a class="nav-link" href="500.html">500 Page</a>
+                                        <a class="nav-link" href="#">Carpeta 2.1</a>
+                                        <a class="nav-link" href="#">Carpeta 2.2</a>
+                                        <a class="nav-link" href="#">Carpeta 2.3</a>
                                     </nav>
                                 </div>
                             </nav>
@@ -88,10 +90,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
-                    <form class="d-flex" method="post" action="">
-                        <input id="search" class="form-control me-2" type="search" name="search" placeholder="Search..." aria-label="Search"> 
-                        <button id="search-document" class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
                 </div>
             </nav>
         </div>
