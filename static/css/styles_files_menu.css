@@ -50,6 +50,6 @@ body {
   display: block
 }
 
-#menu li a:hover {
+#menu li a:hover{
   background-color: #eee;
 }

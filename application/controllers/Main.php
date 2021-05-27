@@ -140,24 +140,24 @@ class Main extends CI_Controller {
 		$this->load->view('private/footer');
 	}
 
-	public function files()
+	public function files_menu_carpeta11()
 	{
 		$this->load->view('private/header');
-		$this->load->view('private/files');
+		$this->load->view('private/files_menu_carpeta11.php');
 		$this->load->view('private/footer');
 	}
 
-	public function carpeta1_file()
+	public function files_menu_carpeta12()
 	{
 		$this->load->view('private/header');
-		$this->load->view('private/carpeta1_file');
+		$this->load->view('private/files_menu_carpeta_12');
 		$this->load->view('private/footer');
 	}
 
-	public function files_menu()
+	public function carpetas()
 	{
 		$this->load->view('private/header');
-		$this->load->view('private/files_menu.php');
+		$this->load->view('private/carpetas');
 		$this->load->view('private/footer');
 	}
 }

@@ -18,7 +18,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="<?php base_url(); ?>../static/js/all.min.js"></script>
     <script type="text/javascript" src="<?php base_url() ?>../static/js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="<?php base_url() ?>../static/js/profile_form.js"></script>
-    <script type="text/javascript" src="<?php base_url() ?>../static/js/files.js"></script>
     <script type="text/javascript" src="<?php base_url() ?>../static/js/files_menu.js"></script>
 </head>
 
@@ -52,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="<?php base_url() ?>show_user">Datos</a>
-                                <a class="nav-link" href="<?php base_url() ?>files">Archivos</a>
+                                <a class="nav-link" href="<?php base_url() ?>">Archivos</a>
                             </nav>
                         </div>
                         <div class="sb-sidenav-menu-heading">Documentos</div>
@@ -69,9 +68,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </a>
                                 <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="<?php base_url() ?>carpeta1_file">Carpeta 1.1</a>
-                                        <a class="nav-link" href="<?php base_url() ?>files_menu">Carpeta 1.2</a>
-                                        <a class="nav-link" href="#!">Carpeta 1.3</a>
+                                        <a class="nav-link" href="<?php base_url() ?>files_menu_carpeta11">Carpeta 1.1</a>
+                                        <a class="nav-link" href="<?php base_url() ?>files_menu_carpeta12">Carpeta 1.2</a>
+                                        <a class="nav-link" href="<?php base_url() ?>carpetas">Carpeta 1.3</a>
                                     </nav>
                                 </div>
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
@@ -80,9 +79,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </a>
                                 <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="#">Carpeta 2.1</a>
-                                        <a class="nav-link" href="#">Carpeta 2.2</a>
-                                        <a class="nav-link" href="#">Carpeta 2.3</a>
+                                        <a class="nav-link" href="<?php base_url() ?>">Carpeta 2.1</a>
+                                        <a class="nav-link" href="<?php base_url() ?>">Carpeta 2.2</a>
+                                        <a class="nav-link" href="<?php base_url() ?>">Carpeta 2.3</a>
+                                    </nav>
+                                </div>
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseB" aria-expanded="false" aria-controls="pagesCollapseB">
+                                    Carpeta 3
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseB" aria-labelledby="headingTwo" data-bs-parent="#pagesCollapseB">
+                                    <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionCarpet">
+                                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseA" aria-expanded="false" aria-controls="pagesCollapseA">
+                                            Carpeta 1
+                                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                        </a>
+                                        <div class="collapse" id="pagesCollapseA" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionCarpet">
+                                            <nav class="sb-sidenav-menu-nested nav">
+                                                <a class="nav-link" href="<?php base_url() ?>files_menu_carpeta11">Subcarpeta 1.1</a>
+                                                <a class="nav-link" href="<?php base_url() ?>files_menu_carpeta12">Subcarpeta 1.2</a>
+                                                <a class="nav-link" href="<?php base_url() ?>carpetas">Subcarpeta 1.3</a>
+                                            </nav>
+                                        </div>
                                     </nav>
                                 </div>
                             </nav>

@@ -16,13 +16,12 @@
                                 <button id="search-document" class="btn btn-dark" type="submit">Search</button>
                             </form>
                             <ul id="menu">
-                                <li id="primer-link"><a href="#">Documento 1</a></li>
-                                <li id="segundo-link"><a href="#">Documento 2</a></li>
-                                <li id="tercer-link"><a href="#">Documento 3</a></li>
+                                <li id="carpeta-1"><a href="#">Carpeta 1</a></li>
+                                <li id="carpeta-2"><a href="#">Carpeta 2</a></li>
+                                <li id="carpeta-3"><a href="#">Carpeta 3</a></li>
                             </ul>
                         </div>
-                        <div id="show-pdf-2" class="right-menu" style="background-color:#ddd;">
-                            
+                        <div id="show-subcarpetas" class="right-menu" style="background-color:#ddd;">   
                         </div>
                     </div>
                 </div>
