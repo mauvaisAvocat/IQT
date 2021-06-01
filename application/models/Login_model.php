@@ -31,6 +31,11 @@ class Login_model extends CI_Model {
 		$this->db->where('id', $id);
 		$this->db->update('usuario', $data);
 	}
-	
+
+	function update_status($id)
+	{
+		$query = "UPDATE usuario SET estatus = 0 WHERE id =".$id;
+		$this->db->query($query);
+	}
 }
 ?>

@@ -66,10 +66,12 @@ class Main extends CI_Controller {
 	}
 
 	public function enter() {
-		if ($this->session->userdata('username') != '') 
+		$res = $this->Login_model->get_user($this->session->userdata('id'));
+		$username = $this->session->userdata('username');
+		if ($this->session->userdata('username') != '' && $res->estatus == 1) 
 		{
-			$this->load->view('private/header');
-			$this->load->view('private/tables');
+			$this->load->view('private/header', array("username" => $username));
+			$this->load->view('private/dashboard');
 			$this->load->view('private/footer');	
 		}
 		else 
@@ -87,6 +89,7 @@ class Main extends CI_Controller {
 	public function user_settings()
 	{
 		$id = $this->session->userdata('id');
+		$username = $this->session->userdata('username');
 		$res = $this->Login_model->get_user($id);
 		$data = array(
 			"address" => $res->domicilio,
@@ -97,7 +100,7 @@ class Main extends CI_Controller {
 			"password" => $res->password
 		);
 
-		$this->load->view('private/header');
+		$this->load->view('private/header', array("username" => $username));
 		$this->load->view('private/profile', $data);
 		$this->load->view('private/footer');
 	}
@@ -123,26 +126,10 @@ class Main extends CI_Controller {
 		redirect(base_url(). 'main/user_settings');
 	}
 
-	public function show_user()
-	{
-		$res = $this->Login_model->get_user($this->session->userdata('id'));
-		$data = array(
-			"username" => $res->username,
-			"address" => $res->domicilio,
-			"phone" => $res->telefono,
-			"extension" => $res->extension,
-			"rfc" => $res->rfc,
-			"curp" => $res->curp
-		);
-
-		$this->load->view('private/header');
-		$this->load->view('private/user_data', $data);
-		$this->load->view('private/footer');
-	}
-
 	public function files_menu_carpeta11()
 	{
-		$this->load->view('private/header');
+		$username = $this->session->userdata('username');
+		$this->load->view('private/header', array("username" => $username));
 		$this->load->view('private/files_menu_carpeta11.php');
 		$this->load->view('private/footer');
 	}
@@ -158,6 +145,29 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('private/header');
 		$this->load->view('private/carpetas');
+		$this->load->view('private/footer');
+	}
+
+	public function load_files()
+	{
+		$username = $this->session->userdata('username');
+		$this->load->view('private/header', array("username" => $username));
+		$this->load->view('private/load_files');
+		$this->load->view('private/footer');
+	}
+
+	public function lock_user()
+	{
+		$id = $this->session->userdata('id');
+		$this->Login_model->update_status($id);
+		redirect(base_url());
+	}
+
+	public function show_files()
+	{
+		$username = $this->session->userdata('username');
+		$this->load->view('private/header', array("username" => $username));
+		$this->load->view('private/files');
 		$this->load->view('private/footer');
 	}
 }
