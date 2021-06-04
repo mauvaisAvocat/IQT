@@ -30,7 +30,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php base_url() ?>../">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Directorio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php base_url() ?>contact_view">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -109,4 +108,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>
 </section>
+
+<!-- Contact section-->
+    <section class="bg-light py-5">
+        <div class="container px-5 my-5 px-5">
+            <div class="text-center mb-5">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+                <h2 class="fw-bolder">Get in touch</h2>
+                <p class="lead mb-0">We'd love to hear from you</p>
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-6">
+                    <form>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="inputName" type="text" placeholder="Enter your name..." />
+                            <label for="inputName">Full name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
+                            <label for="inputEmail">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="inputPhone" type="tel" placeholder="(123) 456-7890" />
+                            <label for="inputPhone">Phone number</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="inputMessage" type="text" placeholder="Enter your message here..." style="height: 10rem"></textarea>
+                            <label for="inputMessage">Message</label>
+                        </div>
+                        <div class="d-grid"><button class="btn btn-primary btn-lg" type="submit">Submit</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 

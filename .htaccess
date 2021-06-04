@@ -1,5 +1,5 @@
 Options +FollowSymlinks
 Options -MultiViews
 RewriteEngine On
-RewriteCond $1 !^(index.php|static)
+RewriteCond $1 !^(index.php|static|uploads)
 RewriteRule ^(.*)$ /estadia/index.php?$1 [L]

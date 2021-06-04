@@ -13,15 +13,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <title>Ample Admin Lite Template by WrapPixel</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php base_url() ?>../static/plugins/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url() ?>static/plugins/images/favicon.png">
     <!-- Custom CSS -->
-    <link href="<?php base_url() ?>../static/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?php base_url() ?>../static/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
+    <link href="<?= base_url() ?>static/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= base_url() ?>static/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <!-- Custom CSS -->
-    <link href="<?php base_url() ?>../static/css/style.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?php base_url() ?>../static/fontawesome/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php base_url() ?>../static/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php base_url() ?>../static/css/styles_files_menu.css">
+    <link href="<?= base_url() ?>static/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>static/fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>static/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>static/css/styles_files_menu.css">
 </head>
 <body>
     <!-- ============================================================== -->
@@ -51,13 +51,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <!-- Logo icon -->
                     <b class="logo-icon">
                         <!-- Dark Logo icon -->
-                        <img src="<?php base_url() ?>../static/plugins/images/logo-icon.png" alt="homepage" />
+                        <img src="<?= base_url() ?>static/plugins/images/logo-icon.png" alt="homepage" />
                     </b>
                     <!--End Logo icon -->
                     <!-- Logo text -->
                     <span class="logo-text">
                         <!-- dark Logo text -->
-                        <img src="<?php base_url() ?>../static/plugins/images/logo-text.png" alt="homepage" />
+                        <img src="<?= base_url() ?>static/plugins/images/logo-text.png" alt="homepage" />
                     </span>
                 </a>
                 <!-- ============================================================== -->
@@ -81,13 +81,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                     <li>
                         <a class="nav-link dropdown-toggle profile-pic" id="logout" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                            <img src="<?php base_url() ?>../static/plugins/images/users/user-default.png" alt="user-img" width="36"
+                            <img src="<?= base_url() ?>static/plugins/images/users/user-default.png" alt="user-img" width="36"
                             class="img-circle">
                             <span class="text-white font-medium"><?= $username ?></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="logout">
-                            <li><a class="dropdown-item" href="<?php base_url() ?>logout">Cerrar sesión</a></li>
-                            <li><a class="dropdown-item" href="<?php base_url() ?>lock_user">Desactivar usuario</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url() ?>main/logout">Cerrar sesión</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url() ?>main/lock_user">Desactivar usuario</a></li>
                         </ul>
                     </li>
                         <!-- ============================================================== -->
@@ -110,11 +110,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <!-- User Profile-->
-                        <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php base_url() ?>user_settings" aria-expanded="false">
+                        <li class="sidebar-item pt-2" id="sideAccordionPerfil">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"data-bs-toggle="collapse" data-bs-target="#perfil" aria-expanded="false" aria-controls="perfil">
                                 <i class="fas fa-user" aria-hidden="true"></i>
                                 <span class="hide-menu">Perfil</span>
                             </a>
+                            <div class="collapse" id="perfil" aria-labelledby="headingTwo" data-bs-parent="#sideAccordionPerfil"> 
+                                <nav class="nav-link">
+                                    <ul>
+                                        <li class="sidebar-nav">
+                                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>main/user_settings" aria-expanded="false">
+                                                <i class="fas fa-user-edit"></i>
+                                                <span class="hide-menu">Configuración</span>
+                                            </a>
+                                        </li>
+                                        <li class="sidebar-nav">
+                                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>main/load_posts" aria-expanded="false">
+                                                <i class="fas fa-marker"></i>
+                                                <span class="hide-menu">Posts</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </li>
                         <!-- Files -->
                         <li class="sidebar-item" id="sideAccordionArchivo">
@@ -126,13 +144,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <nav class="nav-link">
                                  <ul>
                                      <li class="sidebar-nav">
-                                         <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php base_url() ?>load_files" aria-expanded="false">
+                                         <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>main/load_files" aria-expanded="false">
                                             <i class="fas fa-file-upload" aria-hidden="true"></i>
                                             <span class="hide-menu">Subir archivos</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-nav">
-                                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php base_url()?>../file/show_files" aria-expanded="false">
+                                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>file/show_files" aria-expanded="false">
                                             <i class="fas fa-search" aria-hidden="true"></i>
                                             <span class="hide-menu">Consultar archivos</span>
                                         </a>

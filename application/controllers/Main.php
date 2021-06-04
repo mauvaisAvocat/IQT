@@ -6,27 +6,28 @@ class Main extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('Login_model');
+		$this->load->model('Post_model');
 		$this->load->library('encryption');
 
 	}
 
 	public function index()
 	{
+		$data['posts'] = $this->Post_model->get_posts();
 		$this->load->view('main_header');
-		$this->load->view('main_page');
+		$this->load->view('main_page', $data);
 		$this->load->view('main_footer');
 		$this->load->helper('url');
+		if ($this->session->userdata('username') != "")
+		{
+			$this->session->unset_userdata('username');
+			redirect(base_url());
+		}
 	}
 
 	public function directory_view()
 	{
 		$this->load->view('directory');
-		$this->load->view('main_footer');
-	}
-
-	public function contact_view()
-	{
-		$this->load->view('contact');
 		$this->load->view('main_footer');
 	}
 
@@ -168,6 +169,15 @@ class Main extends CI_Controller {
 		$username = $this->session->userdata('username');
 		$this->load->view('private/header', array("username" => $username));
 		$this->load->view('private/files');
+		$this->load->view('private/footer');
+	}
+
+	public function load_posts()
+	{
+		$data['posts_list'] = $this->Post_model->get_user_posts();
+		$username = $this->session->userdata('username');
+		$this->load->view('private/header', array("username" => $username));
+		$this->load->view('private/load_post', $data);
 		$this->load->view('private/footer');
 	}
 }

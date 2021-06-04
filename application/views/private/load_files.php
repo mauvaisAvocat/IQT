@@ -7,7 +7,7 @@
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">Subir archivo</h4>
+                <h4 class="page-title"><i class="fas fa-file-upload"></i>Subir archivo</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
@@ -35,7 +35,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="white-box">
-                <form action="<?php base_url() ?>../file/load_files" method="post" enctype="multipart/form-data">
+                <form action="<?= base_url() ?>file/load_files" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="inputDocument">Fecha:</label>
                         <input class="form-control" type="date" name="date" id="date">

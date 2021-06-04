@@ -10,12 +10,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="author" content="Andrea Suárez Mendoza" />
     <title>Prueba</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="<?php base_url() ?>static/assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="<?= base_url() ?>static/assets/favicon.ico" />
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="<?php base_url() ?>static/css/styles.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="<?php base_url() ?>static/bootstrap/css/bootstrap.min.css">
+    <link href="<?= base_url() ?>static/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>static/bootstrap/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -29,8 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php base_url() ?>main/directory_view">Directorio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php base_url() ?>main/contact_view">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url() ?>main/directory_view">Directorio</a></li>
                 </ul>
             </div>
         </div>
@@ -53,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="card text-dark bg-light mb-3">
                         <div class="card-header">Login</div>
                         <div class="card-body">
-                            <form id="login" action="<?php base_url() ?>main/login_validation" method="post"> 
+                            <form id="login" action="<?= base_url() ?>main/login_validation" method="post"> 
                                 <div class="mb-3">
                                     <label for="inputUsername">Username</label>
                                     <input class="form-control" type="text" name="username">
