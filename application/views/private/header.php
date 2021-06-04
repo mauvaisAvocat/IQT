@@ -116,6 +116,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <span class="hide-menu">Perfil</span>
                             </a>
                         </li>
+                        <!-- Files -->
                         <li class="sidebar-item" id="sideAccordionArchivo">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" data-bs-toggle="collapse" data-bs-target="#carpetas" aria-expanded="false" aria-controls="carpetas">
                                 <i class="fas fa-folder-open" aria-hidden="true"></i>
@@ -126,13 +127,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                  <ul>
                                      <li class="sidebar-nav">
                                          <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php base_url() ?>load_files" aria-expanded="false">
-                                            <i class="fas fa-folder-open" aria-hidden="true"></i>
+                                            <i class="fas fa-file-upload" aria-hidden="true"></i>
                                             <span class="hide-menu">Subir archivos</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-nav">
-                                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php base_url()?>show_files" aria-expanded="false">
-                                            <i class="fas fa-folder-open" aria-hidden="true"></i>
+                                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php base_url()?>../file/show_files" aria-expanded="false">
+                                            <i class="fas fa-search" aria-hidden="true"></i>
                                             <span class="hide-menu">Consultar archivos</span>
                                         </a>
                                     </li>

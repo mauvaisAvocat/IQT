@@ -35,21 +35,28 @@
     <div class="row">
         <div class="col-md-12">
             <div class="white-box">
-                <form action="<?php base_url() ?>../file/load_files" method="post">
+                <form action="<?php base_url() ?>../file/load_files" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
-                        <label for="inputDate">Fecha:</label>
-                        <input class="form-control" type="text" name="date" id="date">
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputDocument">Documento:</label>
-                        <input class="form-control" type="text" name="document" id="document">
+                        <label for="inputDocument">Fecha:</label>
+                        <input class="form-control" type="date" name="date" id="date">
                     </div>
                     <div class="mb-3">
                         <label for="inputDesc">Descripción:</label>
                         <input class="form-control" type="text" name="description" id="description">
                     </div>
+                    <div class="mb-3">
+                        <input class="form-control" type="file" name="userfile">
+                    </div>
                     <button class="btn btn-success" type="submit">Subir</button>
                 </form>
+                <?php
+                if(isset($error)){
+                    echo "<strong style='color:red;'>".$error."</strong>";
+                }
+                if (isset($archivo)){
+                    echo "<strong style='color:green;'>".$archivo["orig_name"]." subido satisfactoriamente </strong>";
+                }
+                ?>
             </div>
         </div>
     </div>
