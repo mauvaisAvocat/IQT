@@ -14,72 +14,75 @@
                     <ol class="breadcrumb ms-auto">
                         <li><a href="#" class="fw-normal">Dashboard</a></li>
                     </ol>
-                    <a href="https://www.wrappixel.com/templates/ampleadmin/" target="_blank"
-                    class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Upgrade
-                to Pro</a>
+                    <a href="<?= base_url() ?>post/"
+                        class="btn btn-dark  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Posts</a>
+                    </div>
+                </div>
             </div>
+            <!-- /.col-lg-12 -->
         </div>
-    </div>
-    <!-- /.col-lg-12 -->
-</div>
-<!-- ============================================================== -->
-<!-- End Bread crumb and right sidebar toggle -->
-<!-- ============================================================== -->
-<!-- ============================================================== -->
-<!-- Container fluid  -->
-<!-- ============================================================== -->
-<div class="container-fluid">
-    <!-- ============================================================== -->
-    <!-- Start Page Content -->
-    <!-- ============================================================== -->
-    <div class="row">
-        <div class="col-md-12">
-            <div class="white-box">
-                
-                <form action="<?php base_url() ?>edit_user" method="post">
-                    <div class="mb-3">
-                        <label for="inputAddress">Domicilio:</label>
-                        <input id="address" class="form-control" type="text" name="address" value="<?= $address ?>">
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="white-box">
+                        <div class="card border-dark">
+                            <div class="card-header">Datos</div>
+                            <div class="card-body">
+                               <form action="<?php base_url() ?>edit_user" method="post">
+                                    <div class="form-group">
+                                        <label for="inputAddress">Domicilio:</label>
+                                        <input id="address" class="form-control" type="text" name="address" value="<?= $address ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPhone">Teléfono:</label>
+                                        <input id="phone" class="form-control" type="number" name="phone" value="<?= $phone ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputExtension">Extensión:</label>
+                                        <input id="extension" class="form-control" type="number" name="extension" value="<?= $extension ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputRFC">RFC:</label>
+                                        <input id="rfc" class="form-control" type="text" name="rfc" value="<?= $rfc ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputCurp">CURP:</label>
+                                        <input id="curp" class="form-control" type="text" name="curp" value="<?= $curp ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword">Cambiar password:</label>
+                                        <input id="password" class="form-control" type="password" name="password" value="<?= $password ?>">
+                                    </div>
+                                    <button class="btn btn-success" type="submit">Guardar cambios</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="inputPhone">Teléfono:</label>
-                        <input id="phone" class="form-control" type="number" name="phone" value="<?= $phone ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputExtension">Extensión:</label>
-                        <input id="extension" class="form-control" type="number" name="extension" value="<?= $extension ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputRFC">RFC:</label>
-                        <input id="rfc" class="form-control" type="text" name="rfc" value="<?= $rfc ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputCurp">CURP:</label>
-                        <input id="curp" class="form-control" type="text" name="curp" value="<?= $curp ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputPassword">Cambiar password:</label>
-                        <input id="password" class="form-control" type="password" name="password" value="<?= $password ?>">
-                    </div>
-                    <button class="btn btn-success" type="submit">Guardar cambios</button>
-                </form>
+                </div>
             </div>
-        </div>
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
-    <!-- End PAge Content -->
+    <!-- End Container fluid  -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
-    <!-- Right sidebar -->
-    <!-- ============================================================== -->
-    <!-- .right-sidebar -->
-    <!-- ============================================================== -->
-    <!-- End Right sidebar -->
-    <!-- ============================================================== -->
-</div>
-<!-- ============================================================== -->
-<!-- End Container fluid  -->
-<!-- ============================================================== -->
-<!-- ============================================================== -->
 
 

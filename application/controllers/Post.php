@@ -11,6 +11,15 @@ class Post extends CI_Controller
 		$this->folder = 'uploads/images/';
 	}
 
+	public function index()
+	{
+		$data['posts_list'] = $this->Post_model->get_user_posts($this->session->userdata('id'));
+		$data['user'] = $this->Post_model->get_user_post($this->session->userdata('id'));
+		$this->load->view('private/header', array("username" => $this->session->userdata('username')));
+		$this->load->view('private/load_post', $data);
+		$this->load->view('private/footer');
+	}
+
 	public function load_posts()
 	{
 		$config['upload_path'] = $this->folder;
@@ -40,12 +49,13 @@ class Post extends CI_Controller
 				'mensaje' => $message,
 				'ruta' => $route,
 				'extension' => $extension,
-				'nom_post' => $name
+				'nom_post' => $name,
+				'id' => $this->session->userdata('id')
 			);
 			$this->Post_model->insert_post($data);
 
-			$data['archivo'] = $this->upload->data();
-			redirect(base_url().'main/load_posts', $data);
+			$data['archivo'] = $this->upload->data();	
+			redirect(base_url().'post', $data);
 		}
 	}
 
@@ -53,7 +63,7 @@ class Post extends CI_Controller
 	{
 		if ($this->Post_model->delete_post($id_post))
 		{
-			redirect(base_url().'main/load_posts');
+			redirect(base_url().'post/');
 		}
 	}
 

@@ -171,13 +171,4 @@ class Main extends CI_Controller {
 		$this->load->view('private/files');
 		$this->load->view('private/footer');
 	}
-
-	public function load_posts()
-	{
-		$data['posts_list'] = $this->Post_model->get_user_posts();
-		$username = $this->session->userdata('username');
-		$this->load->view('private/header', array("username" => $username));
-		$this->load->view('private/load_post', $data);
-		$this->load->view('private/footer');
-	}
 }

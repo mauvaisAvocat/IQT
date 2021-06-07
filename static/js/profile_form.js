@@ -23,4 +23,7 @@ $( document ).ready(function(){
 		$('#password').val('');
 	});
 
+	$( '.btn-link' ).click(function(){
+		$( '#posts' ).append('<div class="alert alert-success" role="alert">Se ha eliminado exitosamente</div>');
+	});
 });

@@ -14,9 +14,8 @@
                     <ol class="breadcrumb ms-auto">
                         <li><a href="#" class="fw-normal">Dashboard</a></li>
                     </ol>
-                    <a href="https://www.wrappixel.com/templates/ampleadmin/" target="_blank"
-                    class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Upgrade
-                to Pro</a>
+                    <a href="<?= base_url() ?>main/load_files"
+                    class="btn btn-success  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Subir archivo</a>
             </div>
         </div>
     </div>
@@ -37,34 +36,44 @@
             <div class="white-box">
                 <?php if (count($files) > 0): ?>
                 <h3 class="box-title">Documentos</h3>
-                    <div class="table-responsive">
-                        <table class="table text-nowrap">
-                            <thead>
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Files
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Fecha</th>
+                                <th>Descripción</th>
+                                <th>Extensión</th>
+                                <th>Archivo</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Fecha</th>
+                                <th>Descripción</th>
+                                <th>Extensión</th>
+                                <th>Archivo</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <?php foreach ($files as $file) : ?>
                                 <tr>
-                                    <th class="border-top-0">#</th>
-                                    <th class="border-top-0">Nombre</th>
-                                    <th class="border-top-0">Fecha</th>
-                                    <th class="border-top-0">Descripción</th>
-                                    <th class="border-top-0">Extensión</th>
-                                    <th class="border-top-0">Archivo</th>
+                                    <td><?= $file->nombre ?></td>
+                                    <td><?= $file->fecha ?></td>
+                                    <td><?= $file->descripcion ?></td>
+                                    <td><?= $file->extension ?></td>
+                                    <td><a href="<?= base_url() ?>file/download_file/<?= $file->nom_arch ?>"><?= $file->nom_arch ?></a></td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($files as $file) : ?>
-                                    <tr>
-                                        <td><?= $file->id_archivo ?></td>
-                                        <td><?= $file->nombre ?></td>
-                                        <td><?= $file->fecha ?></td>
-                                        <td><?= $file->descripcion ?></td>
-                                        <td><?= $file->extension ?></td>
-        
-                                        <td><i class="fas fa-file-download"><a href="<?php base_url() ?>download_file/<?= $file->nom_arch?>"><?= $file->nom_arch ?></a></i></td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    </div>
-                    <?php endif; ?> 
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+                <?php endif; ?> 
                     <?php if (empty($files)) : ?>
                         <h3><?= $message ?></h3>
                     <?php endif; ?>          

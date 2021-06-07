@@ -14,8 +14,7 @@
                     <ol class="breadcrumb ms-auto">
                         <li><a href="#" class="fw-normal">Dashboard</a></li>
                     </ol>
-                    <a href="<?= base_url() ?>main/load_posts"
-                        class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">
+                    <a href="#posts-views" class="btn btn-danger d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white" data-bs-toggle="collapse" data-bs-target="#posts-views" aria-expandend="false" aria-controls="posts-views">
                         Ver posts
                     </a>
                 </div>
@@ -35,7 +34,7 @@
         <!-- ============================================================== -->
         <div class="row">
             <div class="col-md-12">
-                <div class="white-box">
+                <div class="white-box" id="posts">
                     <form action="<?= base_url() ?>post/load_posts" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="inputTittle">Título:</label>
@@ -59,21 +58,18 @@
                 </div>
                 <!-- Show user posts -->
                 <?php if (!empty($posts_list)) : ?>
-                    <div class="white-box" id="posts-views">
-                        <div class="row">
-                            <?php foreach ($posts_list as $post) : ?>
-                                <div class="col-sm-6">
-                                    <div class="card" style="width: 18rem">
-                                        <img src="<?= base_url().$post->ruta ?>">
-                                        <div class="card-body">
-                                            <h5 class="card-title"><?= $post->titulo ?></h5>
-                                            <p class="card-text"><?= $post->mensaje ?></p>
-                                            <a class="btn btn-danger" href="<?= base_url().'post/btn_delete/'.$post->id_post ?>">Eliminar post</a>
-                                        </div>
-                                    </div>
+                    <div class="white-box collapse card-group" id="posts-views">
+                        <?php foreach ($posts_list as $post) : ?>
+                            <div class="card">
+                                <img class="card-img-top" src="<?= base_url().$post->ruta ?>"> 
+                                <div class="card-body"> 
+                                    <h5 class="card-title"><?= $post->titulo ?></h5> 
+                                    <p class="card-text"><?= $post->mensaje ?></p> 
+                                    <a class="btn btn-danger btn-link" href="<?= base_url().'post/btn_delete/'.$post->id_post ?>">Eliminar post</a> 
                                 </div>
-                            <?php endforeach; ?>
-                        </div>
+                                <div class="card-footer"></div> 
+                            </div> 
+                        <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
             </div>

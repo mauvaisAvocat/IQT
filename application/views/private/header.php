@@ -22,6 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>static/fontawesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>static/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>static/css/styles_files_menu.css">
+    <link href="<?= base_url() ?>static/css/table_style.css" rel="stylesheet" />
 </head>
 <body>
     <!-- ============================================================== -->
@@ -125,7 +126,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             </a>
                                         </li>
                                         <li class="sidebar-nav">
-                                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>main/load_posts" aria-expanded="false">
+                                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>post/" aria-expanded="false">
                                                 <i class="fas fa-marker"></i>
                                                 <span class="hide-menu">Posts</span>
                                             </a>

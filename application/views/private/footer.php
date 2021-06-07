@@ -31,6 +31,9 @@
 <script src="<?= base_url() ?>static/plugins/bower_components/chartist/dist/chartist.min.js"></script>
 <script src="<?= base_url() ?>static/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
 <script src="<?= base_url() ?>static/js/pages/dashboards/dashboard1.js"></script>
+<script src="<?= base_url() ?>static/js/datatables-simple-demo.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+<script src="<?= base_url() ?>static/js/simple-datatables@latest.js"></script>
 </body>
 
 </html>
