@@ -9,7 +9,7 @@
                         <img class="img-fluid" src="<?= base_url().$post->ruta ?>" alt="<?= $post->nom_post ?>">
                         <p><?= $post->mensaje ?></p>
                         <a class="text-decoration-none" href="#!">
-                            Call to action
+                            <?= $post->username ?>
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>

@@ -14,7 +14,6 @@ class Post extends CI_Controller
 	public function index()
 	{
 		$data['posts_list'] = $this->Post_model->get_user_posts($this->session->userdata('id'));
-		$data['user'] = $this->Post_model->get_user_post($this->session->userdata('id'));
 		$this->load->view('private/header', array("username" => $this->session->userdata('username')));
 		$this->load->view('private/load_post', $data);
 		$this->load->view('private/footer');
@@ -32,9 +31,7 @@ class Post extends CI_Controller
 			$error = array(
 				'error' => $this->upload->display_errors()
 			);
-			$this->load->view('private/header', array("username" => $this->session->userdata('username')));
-			$this->load->view('private/load_post', $error);
-			$this->load->view('private/footer');
+			redirect(base_url().'post/', $error);
 		}
 		else
 		{
@@ -55,7 +52,7 @@ class Post extends CI_Controller
 			$this->Post_model->insert_post($data);
 
 			$data['archivo'] = $this->upload->data();	
-			redirect(base_url().'post', $data);
+			redirect(base_url().'post/', $data);
 		}
 	}
 

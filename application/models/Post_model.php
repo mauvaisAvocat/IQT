@@ -10,14 +10,16 @@ class Post_model extends CI_Model
 
 	function get_posts()
 	{
-		$query = "SELECT * FROM post";
+		$query = "SELECT id_post, titulo, mensaje, ruta, post.extension, nom_post, post.id, username 
+				FROM post, usuario WHERE post.id = usuario.id";
 		$res = $this->db->query($query);
 		return $res->result(); 
 	}
 
 	function get_user_posts($user_id)
 	{
-		$query = "SELECT * FROM post WHERE id=".$user_id;
+		$query = "SELECT id_post, titulo, mensaje, ruta, post.extension, nom_post, post.id, username
+				FROM post, usuario WHERE post.id = usuario.id AND post.id = ".$user_id;
 		$res = $this->db->query($query);
 		return $res->result();
 	}
@@ -29,11 +31,5 @@ class Post_model extends CI_Model
 		return true;
 	}
 
-	function get_user_post($user_id)
-	{
-		$query = "SELECT username FROM post, usuario WHERE usuario.id = post.id AND usuario.id=".$user_id;
-		$res = $this->db->query($query);
-		return $res->result(); 
-	}
 }
 ?>

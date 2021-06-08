@@ -33,8 +33,8 @@
             <!-- ============================================================== -->
             <div class="row">
                 <div class="col-md-12">
-                    <div class="white-box">
-                        <div class="card border-dark">
+                    <div class="white-box row justify-content-center">
+                        <div class="card" style="max-width: 50rem;">
                             <div class="card-header">Datos</div>
                             <div class="card-body">
                                <form action="<?php base_url() ?>edit_user" method="post">

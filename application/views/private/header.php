@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Custom CSS -->
     <link href="<?= base_url() ?>static/css/style.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>static/fontawesome/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>static/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>static/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>static/css/styles_files_menu.css">
     <link href="<?= base_url() ?>static/css/table_style.css" rel="stylesheet" />
 </head>

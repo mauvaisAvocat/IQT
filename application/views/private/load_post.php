@@ -34,42 +34,56 @@
         <!-- ============================================================== -->
         <div class="row">
             <div class="col-md-12">
-                <div class="white-box" id="posts">
-                    <form action="<?= base_url() ?>post/load_posts" method="post" enctype="multipart/form-data">
-                        <div class="mb-3">
-                            <label for="inputTittle">Título:</label>
-                            <input class="form-control" type="text" name="tittle" id="tittle">
+                <div class="white-box row justify-content-center" id="posts">
+                    <div class="card text-dark bg-light mb-3" style="max-width: 50rem;">
+                        <div class="card-header"></div>
+                        <div class="card-body">
+                            <form action="<?= base_url() ?>post/load_posts" method="post" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label for="inputTittle">Titulo:</label>
+                                    <input class="form-control" type="text" name="tittle" id="tittle" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputMessage">Mensaje:</label>
+                                    <textarea class="form-control" name="message" id="message" placeholder="Escribe aquí..." required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="file" name="userfile" id="userfile" required>
+                                </div>
+                                <div class="mb-3">
+                                    <button class="btn btn-success" type="submit">Subir</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="mb-3">
-                            <label for="inputMessage">Mensaje:</label>
-                            <textarea class="form-control" name="message" id="message" placeholder="Escribe..."></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <input class="form-control" type="file" name="userfile">
-                        </div>
-                        <button class="btn btn-success" type="submit">Subir</button>
-                    </form>
-                    <?php
-                    if (isset($error))
-                        echo "<strong style='color:red;'>".$error."</strong>"; 
-                    if (isset($archivo))
-                        echo "<strong style='color:green;'>".$archivo["orig_name"]." subido satisfactoriamente </strong>";
-                    ?>
+                    </div>
                 </div>
                 <!-- Show user posts -->
                 <?php if (!empty($posts_list)) : ?>
-                    <div class="white-box collapse card-group" id="posts-views">
-                        <?php foreach ($posts_list as $post) : ?>
-                            <div class="card">
-                                <img class="card-img-top" src="<?= base_url().$post->ruta ?>"> 
-                                <div class="card-body"> 
-                                    <h5 class="card-title"><?= $post->titulo ?></h5> 
-                                    <p class="card-text"><?= $post->mensaje ?></p> 
-                                    <a class="btn btn-danger btn-link" href="<?= base_url().'post/btn_delete/'.$post->id_post ?>">Eliminar post</a> 
+                    <div class="white-box collapse" id="posts-views">
+                        <div class="container px-5 my-5">
+                            <div class="row gx-5">
+                            <?php foreach ($posts_list as $post) : ?>
+                                <div class="col-lg-4 mb-5 mb-lg-0 border border-secondary">
+                                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i>
+                                    </div>
+                                    <h2 class="h4 fw-bolder"><?= $post->titulo ?></h2>
+                                    <img class="img-fluid" src="<?= base_url().$post->ruta ?>" alt="<?= $post->nom_post ?>">
+                                    <p><?= $post->mensaje ?></p>
+                                    <a class="btn btn-danger btn-link-post" href="<?= base_url() ?>post/btn_delete/<?= $post->id_post ?>">
+                                        Eliminar
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
                                 </div>
-                                <div class="card-footer"></div> 
-                            </div> 
-                        <?php endforeach; ?>
+                            <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+                <?php if (empty($posts_list)) : ?>
+                    <div class="white-box">
+                        <div class="container px-5 my-5">
+                            <h3>No hay posts</h3>
+                        </div>
                     </div>
                 <?php endif; ?>
             </div>
