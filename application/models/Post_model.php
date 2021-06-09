@@ -31,5 +31,12 @@ class Post_model extends CI_Model
 		return true;
 	}
 
+	function images_routes()
+	{
+		$query = "SELECT ruta FROM post ";
+		$res = $this->db->query($query);
+		return $res->result();
+	}
+
 }
 ?>

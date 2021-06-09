@@ -13,10 +13,16 @@ class Post extends CI_Controller
 
 	public function index()
 	{
-		$data['posts_list'] = $this->Post_model->get_user_posts($this->session->userdata('id'));
-		$this->load->view('private/header', array("username" => $this->session->userdata('username')));
-		$this->load->view('private/load_post', $data);
-		$this->load->view('private/footer');
+		$data['images'] = $this->Post_model->images_routes();
+		if (isset($images))
+		{
+			$images = glob($this->folder.'/*');
+			foreach ($images as $image)
+			{
+				if (is_file($image))
+					unlink($image);
+			}
+		}
 	}
 
 	public function load_posts()
@@ -26,12 +32,14 @@ class Post extends CI_Controller
 		$config['remove_spaces'] = TRUE;
 
 		$this->load->library('upload', $config);
+
 		if (!$this->upload->do_upload())
 		{
-			$error = array(
-				'error' => $this->upload->display_errors()
-			);
-			redirect(base_url().'post/', $error);
+			$data['error'] = $this->upload->display_errors();
+			$data['posts'] = $this->Post_model->get_user_posts($this->session->userdata('id'));
+			$this->load->view('private/header', array("username" => $this->session->userdata('username')));
+			$this->load->view('private/load_post', $data);
+			$this->load->view('private/footer');
 		}
 		else
 		{
@@ -51,8 +59,12 @@ class Post extends CI_Controller
 			);
 			$this->Post_model->insert_post($data);
 
-			$data['archivo'] = $this->upload->data();	
-			redirect(base_url().'post/', $data);
+			$data['archivo'] = $this->upload->data();
+			$data['posts'] = $this->Post_model->get_user_posts($this->session->userdata('id'));
+
+			$this->load->view('private/header', array("username" => $this->session->userdata('username')));
+			$this->load->view('private/load_post', $data);
+			$this->load->view('private/footer');
 		}
 	}
 
@@ -60,8 +72,18 @@ class Post extends CI_Controller
 	{
 		if ($this->Post_model->delete_post($id_post))
 		{
-			redirect(base_url().'post/');
+			$data['posts'] = $this->Post_model->get_user_posts($this->session->userdata('id'));
+			$data['message'] = "Se ha eliminado exitosamente";
+			$this->load->view('private/header', array("username" => $this->session->userdata('username')));
+			$this->load->view('private/load_post', $data);
+			$this->load->view('private/footer');
 		}
+	}
+
+	public function show_posts()
+	{
+		$data['posts_list'] = $this->Post_model->get_user_posts($this->session->userdata('id'));
+		$this->load->view('private/posts', $data);
 	}
 
 }

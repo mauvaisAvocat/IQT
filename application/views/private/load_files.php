@@ -7,7 +7,7 @@
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title"><i class="fas fa-file-upload"></i>Subir archivo</h4>
+                <h4 class="page-title"><i class="fas fa-file-upload" style="margin-right: 5px;"></i>Subir archivo</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
@@ -33,9 +33,9 @@
     <!-- ============================================================== -->
     <div class="row">
         <div class="col-md-12">
-            <div class="white-box row justify-content-center">
-                <div class="card text-dark bg-light mb-3" style="max-width: 50rem;">
-                    <div class="card-header"></div>
+            <div class="white-box">
+                <div class="card col-md-10 offset-md-1">
+                    <div class="card-header text-white bg-dark"></div>
                     <div class="card-body">
                         <form action="<?= base_url() ?>file/load_files" method="post" enctype="multipart/form-data">
                             <div class="mb-3">
@@ -53,10 +53,10 @@
                         </form>
                         <?php
                         if(isset($error)){
-                            echo "<strong style='color:red;'>".$error."</strong>";
+                            echo "<div class='alert alert-danger' role='alert'>".$error."</div>";
                         }
                         if (isset($archivo)){
-                            echo "<strong style='color:green;'>".$archivo["orig_name"]." subido satisfactoriamente </strong>";
+                            echo "<div class='alert alert-success' role='alert'>".$archivo["orig_name"]." subido satisfactoriamente </div>";
                         }
                         ?>
                     </div>

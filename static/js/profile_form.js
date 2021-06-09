@@ -23,7 +23,7 @@ $( document ).ready(function(){
 		$('#password').val('');
 	});
 
-	$ ( '.btn-link-post' ).click(function(){
-		$( '#posts' ).append('<div class="alert alert-success" role="alert">Se ha eliminado exitosamente</div>');
+	$( '.btn-posts-views' ).click(function(event){
+		$( '#posts-views' ).load('http://localhost/estadia/post/show_posts');
 	});
 });

@@ -113,7 +113,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2" id="sideAccordionPerfil">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"data-bs-toggle="collapse" data-bs-target="#perfil" aria-expanded="false" aria-controls="perfil">
-                                <i class="fas fa-user" aria-hidden="true"></i>
+                                <i class="fas fa-user" aria-hidden="true" style="margin-right: 5px;"></i>
                                 <span class="hide-menu">Perfil</span>
                             </a>
                             <div class="collapse" id="perfil" aria-labelledby="headingTwo" data-bs-parent="#sideAccordionPerfil"> 
@@ -121,13 +121,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <ul>
                                         <li class="sidebar-nav">
                                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>main/user_settings" aria-expanded="false">
-                                                <i class="fas fa-user-edit"></i>
+                                                <i class="fas fa-user-edit" style="margin-right: 5px;"></i>
                                                 <span class="hide-menu">Configuración</span>
                                             </a>
                                         </li>
                                         <li class="sidebar-nav">
-                                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>post/" aria-expanded="false">
-                                                <i class="fas fa-marker"></i>
+                                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>post/load_posts" aria-expanded="false">
+                                                <i class="fas fa-marker" style="margin-right: 5px;"></i>
                                                 <span class="hide-menu">Posts</span>
                                             </a>
                                         </li>
@@ -138,7 +138,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Files -->
                         <li class="sidebar-item" id="sideAccordionArchivo">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" data-bs-toggle="collapse" data-bs-target="#carpetas" aria-expanded="false" aria-controls="carpetas">
-                                <i class="fas fa-folder-open" aria-hidden="true"></i>
+                                <i class="fas fa-folder-open" aria-hidden="true" style="margin-right: 5px"></i>
                                 <span class="hide-menu">Archivos</span>
                             </a>
                             <div class="collapse" id="carpetas" aria-labelledby="headingTwo" data-bs-parent="#sideAccordionArchivo">
@@ -146,13 +146,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                  <ul>
                                      <li class="sidebar-nav">
                                          <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>main/load_files" aria-expanded="false">
-                                            <i class="fas fa-file-upload" aria-hidden="true"></i>
+                                            <i class="fas fa-file-upload" aria-hidden="true" style="margin-right: 5px;"></i>
                                             <span class="hide-menu">Subir archivos</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-nav">
                                         <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>file/show_files" aria-expanded="false">
-                                            <i class="fas fa-search" aria-hidden="true"></i>
+                                            <i class="fas fa-search" aria-hidden="true" style="margin-right: 5px;"></i>
                                             <span class="hide-menu">Consultar archivos</span>
                                         </a>
                                     </li>

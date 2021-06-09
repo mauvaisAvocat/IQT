@@ -7,14 +7,14 @@
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title"><i class="fas fa-upload"></i>Subir post</h4>
+                <h4 class="page-title"><i class="fas fa-upload" style="margin-right: 5px;"></i>Subir post</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
                     <ol class="breadcrumb ms-auto">
                         <li><a href="#" class="fw-normal">Dashboard</a></li>
                     </ol>
-                    <a href="#posts-views" class="btn btn-danger d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white" data-bs-toggle="collapse" data-bs-target="#posts-views" aria-expandend="false" aria-controls="posts-views">
+                    <a href="#posts-views" class="btn btn-danger d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white btn-posts-views" data-bs-toggle="collapse" data-bs-target="#posts-views" aria-expandend="false" aria-controls="posts-views">
                         Ver posts
                     </a>
                 </div>
@@ -34,9 +34,9 @@
         <!-- ============================================================== -->
         <div class="row">
             <div class="col-md-12">
-                <div class="white-box row justify-content-center" id="posts">
-                    <div class="card text-dark bg-light mb-3" style="max-width: 50rem;">
-                        <div class="card-header"></div>
+                <div class="white-box" id="posts">
+                    <div class="card col-md-10 offset-md-1">
+                        <div class="card-header bg-dark"></div>
                         <div class="card-body">
                             <form action="<?= base_url() ?>post/load_posts" method="post" enctype="multipart/form-data">
                                 <div class="mb-3">
@@ -54,32 +54,24 @@
                                     <button class="btn btn-success" type="submit">Subir</button>
                                 </div>
                             </form>
+                            <?php
+                            if (isset($error))
+                                echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>".$error."<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+                            if (isset($archivo))
+                                echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>".$archivo['file_name']."<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+                            if (isset($message))
+                                echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>".$message."<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+                            ?>
                         </div>
                     </div>
                 </div>
                 <!-- Show user posts -->
-                <?php if (!empty($posts_list)) : ?>
+                <?php if (!empty($posts)) : ?>
                     <div class="white-box collapse" id="posts-views">
-                        <div class="container px-5 my-5">
-                            <div class="row gx-5">
-                            <?php foreach ($posts_list as $post) : ?>
-                                <div class="col-lg-4 mb-5 mb-lg-0 border border-secondary">
-                                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i>
-                                    </div>
-                                    <h2 class="h4 fw-bolder"><?= $post->titulo ?></h2>
-                                    <img class="img-fluid" src="<?= base_url().$post->ruta ?>" alt="<?= $post->nom_post ?>">
-                                    <p><?= $post->mensaje ?></p>
-                                    <a class="btn btn-danger btn-link-post" href="<?= base_url() ?>post/btn_delete/<?= $post->id_post ?>">
-                                        Eliminar
-                                        <i class="bi bi-arrow-right"></i>
-                                    </a>
-                                </div>
-                            <?php endforeach; ?>
-                            </div>
-                        </div>
+                        
                     </div>
                 <?php endif; ?>
-                <?php if (empty($posts_list)) : ?>
+                <?php if (empty($posts)) : ?>
                     <div class="white-box">
                         <div class="container px-5 my-5">
                             <h3>No hay posts</h3>

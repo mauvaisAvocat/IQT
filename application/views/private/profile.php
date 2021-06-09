@@ -14,7 +14,7 @@
                     <ol class="breadcrumb ms-auto">
                         <li><a href="#" class="fw-normal">Dashboard</a></li>
                     </ol>
-                    <a href="<?= base_url() ?>post/"
+                    <a href="<?= base_url() ?>post/load_posts"
                         class="btn btn-dark  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Posts</a>
                     </div>
                 </div>
@@ -33,9 +33,9 @@
             <!-- ============================================================== -->
             <div class="row">
                 <div class="col-md-12">
-                    <div class="white-box row justify-content-center">
-                        <div class="card" style="max-width: 50rem;">
-                            <div class="card-header">Datos</div>
+                    <div class="white-box">
+                        <div class="card col-md-10 offset-md-1">
+                            <div class="card-header text-white bg-dark">Datos</div>
                             <div class="card-body">
                                <form action="<?php base_url() ?>edit_user" method="post">
                                     <div class="form-group">
