@@ -24,7 +24,7 @@
 <!--Custom JavaScript -->
 <script src="<?= base_url() ?>static/js/custom.js"></script>
 <!--This page JavaScript -->
-<script src="<?= base_url() ?>static/js/jquery-3.4.1.min.js"></script>
+<script src="<?= base_url() ?>static/js/jquery-3.6.0.min.js"></script>
 <script src="<?= base_url() ?>static/js/profile_form.js"></script>
 <script src="<?= base_url() ?>static/js/files_menu.js"></script>
 <!--chartis chart-->
