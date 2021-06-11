@@ -127,28 +127,6 @@ class Main extends CI_Controller {
 		redirect(base_url(). 'main/user_settings');
 	}
 
-	public function files_menu_carpeta11()
-	{
-		$username = $this->session->userdata('username');
-		$this->load->view('private/header', array("username" => $username));
-		$this->load->view('private/files_menu_carpeta11.php');
-		$this->load->view('private/footer');
-	}
-
-	public function files_menu_carpeta12()
-	{
-		$this->load->view('private/header');
-		$this->load->view('private/files_menu_carpeta_12');
-		$this->load->view('private/footer');
-	}
-
-	public function carpetas()
-	{
-		$this->load->view('private/header');
-		$this->load->view('private/carpetas');
-		$this->load->view('private/footer');
-	}
-
 	public function load_files()
 	{
 		$username = $this->session->userdata('username');
@@ -162,13 +140,5 @@ class Main extends CI_Controller {
 		$id = $this->session->userdata('id');
 		$this->Login_model->update_status($id);
 		redirect(base_url());
-	}
-
-	public function show_files()
-	{
-		$username = $this->session->userdata('username');
-		$this->load->view('private/header', array("username" => $username));
-		$this->load->view('private/files');
-		$this->load->view('private/footer');
 	}
 }

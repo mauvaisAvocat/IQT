@@ -1,11 +1,11 @@
-    <!-- footer -->
-    <!-- ============================================================== -->
-    <footer class="footer text-center"> <?php echo date('Y'); ?> © Ample Admin brought to you by <a
-        href="https://www.wrappixel.com/">wrappixel.com</a>
-    </footer>
-    <!-- ============================================================== -->
-    <!-- End footer -->
-    <!-- ============================================================== -->
+ <!-- footer -->
+<!-- ============================================================== -->
+<footer class="footer text-center"> <?php echo date('Y'); ?> © Ample Admin brought to you by <a
+    href="https://www.wrappixel.com/">wrappixel.com</a>
+</footer>
+<!-- ============================================================== -->
+<!-- End footer -->
+<!-- ============================================================== -->
 </div>
 <!-- ============================================================== -->
 <!-- End Page wrapper  -->
@@ -26,7 +26,6 @@
 <!--This page JavaScript -->
 <script src="<?= base_url() ?>static/js/jquery-3.6.0.min.js"></script>
 <script src="<?= base_url() ?>static/js/profile_form.js"></script>
-<script src="<?= base_url() ?>static/js/files_menu.js"></script>
 <!--chartis chart-->
 <script src="<?= base_url() ?>static/plugins/bower_components/chartist/dist/chartist.min.js"></script>
 <script src="<?= base_url() ?>static/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>

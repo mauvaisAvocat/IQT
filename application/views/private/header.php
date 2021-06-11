@@ -21,7 +21,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="<?= base_url() ?>static/css/style.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>static/fontawesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>static/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>static/css/styles_files_menu.css">
     <link href="<?= base_url() ?>static/css/table_style.css" rel="stylesheet" />
 </head>
 <body>
@@ -34,139 +33,160 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="lds-pos"></div>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
-    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
-    data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
-    <!-- ============================================================== -->
-    <!-- Topbar header - style you can find in pages.scss -->
-    <!-- ============================================================== -->
-    <header class="topbar" data-navbarbg="skin5">
-        <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-            <div class="navbar-header" data-logobg="skin6">
-                <!-- ============================================================== -->
-                <!-- Logo -->
-                <!-- ============================================================== -->
-                <a class="navbar-brand" href="dashboard.html">
-                    <!-- Logo icon -->
-                    <b class="logo-icon">
-                        <!-- Dark Logo icon -->
-                        <img src="<?= base_url() ?>static/plugins/images/logo-icon.png" alt="homepage" />
-                    </b>
-                    <!--End Logo icon -->
-                    <!-- Logo text -->
-                    <span class="logo-text">
-                        <!-- dark Logo text -->
-                        <img src="<?= base_url() ?>static/plugins/images/logo-text.png" alt="homepage" />
-                    </span>
-                </a>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- toggle and nav items -->
-                <!-- ============================================================== -->
-                <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
-                href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
-            </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="user-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-dark">
+            <h5 class="modal-title text-white" id="exampleModalLabel">Desactivar usuario</h5>
+            <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            ¿Estás seguro de desactivar <strong><span id="modal-nombre-usuario"></span></strong>?
+            <br />
+            <small>Esta acción no se podrá deshacer y no podrá iniciar sesión.</small>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-danger" id="btn-confirm-unable">Confirmar</button>
+        </div>
+    </div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+<!-- ============================================================== -->
+<!-- Topbar header - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<header class="topbar" data-navbarbg="skin5">
+    <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+        <div class="navbar-header" data-logobg="skin6">
+            <!-- ============================================================== -->
+            <!-- Logo -->
+            <!-- ============================================================== -->
+            <a class="navbar-brand" href="dashboard.html">
+                <!-- Logo icon -->
+                <b class="logo-icon">
+                    <!-- Dark Logo icon -->
+                    <img src="<?= base_url() ?>static/plugins/images/logo-icon.png" alt="homepage" />
+                </b>
+                <!--End Logo icon -->
+                <!-- Logo text -->
+                <span class="logo-text">
+                    <!-- dark Logo text -->
+                    <img src="<?= base_url() ?>static/plugins/images/logo-text.png" alt="homepage" />
+                </span>
+            </a>
             <!-- ============================================================== -->
             <!-- End Logo -->
             <!-- ============================================================== -->
-            <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-
-                <!-- ============================================================== -->
-                <!-- Right side toggle and nav items -->
-                <!-- ============================================================== -->
-                <ul class="navbar-nav ms-auto d-flex align-items-center">
-
-                    <li>
-                        <a class="nav-link dropdown-toggle profile-pic" id="logout" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                            <img src="<?= base_url() ?>static/plugins/images/users/user-default.png" alt="user-img" width="36"
-                            class="img-circle">
-                            <span class="text-white font-medium"><?= $username ?></span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="logout">
-                            <li><a class="dropdown-item" href="<?= base_url() ?>main/logout">Cerrar sesión</a></li>
-                            <li><a class="dropdown-item" href="<?= base_url() ?>main/lock_user">Desactivar usuario</a></li>
-                        </ul>
-                    </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile -->
-                        <!-- ============================================================== -->
-                </ul>
-            </div>
-        </nav>
-    </header>
-        <!-- ============================================================== -->
-        <!-- End Topbar header -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <aside class="left-sidebar" data-sidebarbg="skin6">
-            <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
-                <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <!-- User Profile-->
-                        <li class="sidebar-item pt-2" id="sideAccordionPerfil">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link"data-bs-toggle="collapse" data-bs-target="#perfil" aria-expanded="false" aria-controls="perfil">
-                                <i class="fas fa-user" aria-hidden="true" style="margin-right: 5px;"></i>
-                                <span class="hide-menu">Perfil</span>
-                            </a>
-                            <div class="collapse" id="perfil" aria-labelledby="headingTwo" data-bs-parent="#sideAccordionPerfil"> 
-                                <nav class="nav-link">
-                                    <ul>
-                                        <li class="sidebar-nav">
-                                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>main/user_settings" aria-expanded="false">
-                                                <i class="fas fa-user-edit" style="margin-right: 5px;"></i>
-                                                <span class="hide-menu">Configuración</span>
-                                            </a>
-                                        </li>
-                                        <li class="sidebar-nav">
-                                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>post/load_posts" aria-expanded="false">
-                                                <i class="fas fa-marker" style="margin-right: 5px;"></i>
-                                                <span class="hide-menu">Posts</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </li>
-                        <!-- Files -->
-                        <li class="sidebar-item" id="sideAccordionArchivo">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" data-bs-toggle="collapse" data-bs-target="#carpetas" aria-expanded="false" aria-controls="carpetas">
-                                <i class="fas fa-folder-open" aria-hidden="true" style="margin-right: 5px"></i>
-                                <span class="hide-menu">Archivos</span>
-                            </a>
-                            <div class="collapse" id="carpetas" aria-labelledby="headingTwo" data-bs-parent="#sideAccordionArchivo">
-                                <nav class="nav-link">
-                                 <ul>
-                                     <li class="sidebar-nav">
-                                         <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>main/load_files" aria-expanded="false">
-                                            <i class="fas fa-file-upload" aria-hidden="true" style="margin-right: 5px;"></i>
-                                            <span class="hide-menu">Subir archivos</span>
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-nav">
-                                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>file/show_files" aria-expanded="false">
-                                            <i class="fas fa-search" aria-hidden="true" style="margin-right: 5px;"></i>
-                                            <span class="hide-menu">Consultar archivos</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </li>
-                </ul>
-
-            </nav>
-            <!-- End Sidebar navigation -->
+            <!-- ============================================================== -->
+            <!-- toggle and nav items -->
+            <!-- ============================================================== -->
+            <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
+            href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
         </div>
-        <!-- End Sidebar scroll-->
-    </aside>
-    <!-- ============================================================== -->
-    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- End Logo -->
+        <!-- ============================================================== -->
+        <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+
+            <!-- ============================================================== -->
+            <!-- Right side toggle and nav items -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav ms-auto d-flex align-items-center">
+
+                <li>
+                    <a class="nav-link dropdown-toggle profile-pic" id="logout" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                        <img src="<?= base_url() ?>static/plugins/images/users/user-default.png" alt="user-img" width="36"
+                        class="img-circle">
+                        <span class="text-white font-medium"><?= $username ?></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="logout">
+                        <li><a class="dropdown-item" href="<?= base_url() ?>main/logout">Cerrar sesión</a></li>
+                        <li><a class="dropdown-item btn-unable-user" data-bs-toggle="modal" data-bs-target="#user-modal" data-user="<?= $username ?>">Desactivar usuario</a></li>
+                    </ul>
+                </li>
+                <!-- ============================================================== -->
+                <!-- User profile -->
+                <!-- ============================================================== -->
+            </ul>
+        </div>
+    </nav>
+</header>
+<!-- ============================================================== -->
+<!-- End Topbar header -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Left Sidebar - style you can find in sidebar.scss  -->
+<!-- ============================================================== -->
+<aside class="left-sidebar" data-sidebarbg="skin6">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+                <!-- User Profile-->
+                <li class="sidebar-item pt-2" id="sideAccordionPerfil">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"data-bs-toggle="collapse" data-bs-target="#perfil" aria-expanded="false" aria-controls="perfil">
+                        <i class="fas fa-user" aria-hidden="true" style="margin-right: 5px;"></i>
+                        <span class="hide-menu">Perfil</span>
+                    </a>
+                    <div class="collapse" id="perfil" aria-labelledby="headingTwo" data-bs-parent="#sideAccordionPerfil"> 
+                        <nav class="nav-link">
+                            <ul>
+                                <li class="sidebar-nav">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>main/user_settings" aria-expanded="false">
+                                        <i class="fas fa-user-edit" style="margin-right: 5px;"></i>
+                                        <span class="hide-menu">Configuración</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-nav">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>post/load_posts" aria-expanded="false">
+                                        <i class="fas fa-marker" style="margin-right: 5px;"></i>
+                                        <span class="hide-menu">Posts</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </li>
+                <!-- Files -->
+                <li class="sidebar-item" id="sideAccordionArchivo">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" data-bs-toggle="collapse" data-bs-target="#carpetas" aria-expanded="false" aria-controls="carpetas">
+                        <i class="fas fa-folder-open" aria-hidden="true" style="margin-right: 5px"></i>
+                        <span class="hide-menu">Archivos</span>
+                    </a>
+                    <div class="collapse" id="carpetas" aria-labelledby="headingTwo" data-bs-parent="#sideAccordionArchivo">
+                        <nav class="nav-link">
+                           <ul>
+                               <li class="sidebar-nav">
+                                   <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>main/load_files" aria-expanded="false">
+                                    <i class="fas fa-file-upload" aria-hidden="true" style="margin-right: 5px;"></i>
+                                    <span class="hide-menu">Subir archivos</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-nav">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>file/show_files" aria-expanded="false">
+                                    <i class="fas fa-search" aria-hidden="true" style="margin-right: 5px;"></i>
+                                    <span class="hide-menu">Consultar archivos</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </li>
+        </ul>
+
+    </nav>
+    <!-- End Sidebar navigation -->
+</div>
+<!-- End Sidebar scroll-->
+</aside>
+<!-- ============================================================== -->
+<!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->

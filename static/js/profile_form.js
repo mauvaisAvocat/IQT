@@ -23,20 +23,21 @@ $( document ).ready(function(){
 		$('#password').val('');
 	});
 
-	$( '.btn-posts-views' ).click(function(){
-		$( '#posts-views' ).load('http://localhost/estadia/post/show_posts');
+	$( '.btn-delete-post' ).click(function(){
+		$( '#modal-nombre-post' ).html($( '.btn-delete-post' ).attr('data-post'));
+		$( '#btn-confirm-delete' ).attr('data-idpost', $( '.btn-delete-post' ).attr('data-idpost'));
+	});     
+
+	$( '#btn-confirm-delete' ).click(function(){
+		location.href = "http://localhost/estadia/post/btn_delete/" + $( this ).attr('data-idpost');
 	});
 
-	$( '.btn-delete-post' ).click(function(e){
-		e.preventDefault();
-		var $idpost = $( '.btn-delete-post' ).attr('data-idpost');
-		var $post = $( '.btn-delete-post' ).attr('data-post');
-		$( '#btn-eliminar-confirmar' ).attr('data-idpost', $idpost);
-		$( '#modal-nombre-post' ).html($post);
+	$( '.btn-unable-user' ).click(function(){
+		$( '#modal-nombre-usuario' ).html($( this ).attr('data-user'));
+		$( '#btn-confirm-unable' ).attr('data-user', $( this ).attr('data-user'));
 	});
 
-	$('#btn-eliminar-confirmar').click(function(){
-		var $idpost = $(this).attr('data-idpost');
-		$( this ).attr('href', 'http://localhost/estadia/post/btn_delete/' + idpost);
-	});
+	$( '#btn-confirm-unable' ).click(function(){
+		location.href = "http://localhost/estadia/main/lock_user";
+	});       
 });
