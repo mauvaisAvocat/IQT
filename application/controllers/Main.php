@@ -14,9 +14,9 @@ class Main extends CI_Controller {
 	public function index()
 	{
 		$data['posts'] = $this->Post_model->get_posts();
-		$this->load->view('main_header');
-		$this->load->view('main_page', $data);
-		$this->load->view('main_footer');
+		$this->load->view('cover_header');
+		$this->load->view('cover_page', $data);
+		$this->load->view('cover_footer');
 		$this->load->helper('url');
 		if ($this->session->userdata('username') != "")
 		{
