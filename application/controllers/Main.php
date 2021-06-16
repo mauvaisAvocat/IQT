@@ -27,8 +27,9 @@ class Main extends CI_Controller {
 
 	public function directory_view()
 	{
+		$this->load->view('cover_header');
 		$this->load->view('directory');
-		$this->load->view('main_footer');
+		$this->load->view('cover_footer');
 	}
 
 	public function login_validation()
@@ -71,8 +72,9 @@ class Main extends CI_Controller {
 		$username = $this->session->userdata('username');
 		if ($this->session->userdata('username') != '' && $res->estatus == 1) 
 		{
+			$data['posts_list'] = $this->Post_model->get_user_posts($this->session->userdata('id'));
 			$this->load->view('private/header', array("username" => $username));
-			$this->load->view('private/dashboard');
+			$this->load->view('private/posts', $data);
 			$this->load->view('private/footer');	
 		}
 		else 

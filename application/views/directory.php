@@ -1,145 +1,107 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="Andrea Suárez Mendoza" />
-    <title>Prueba</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="<?php base_url() ?>../static/assets/favicon.ico" />
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="<?php base_url() ?>../static/css/styles.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="<?php base_url() ?>../static/bootstrap/css/bootstrap.min.css">
-</head>
+ 
 
-<body>
-    <!-- Responsive navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-        <div class="container px-5">
-            <a class="navbar-brand" href="#!">
-                <img src="https://www.iqt.gob.mx/wp-content/themes/InstitutoQueretanoDelTransporte/images/logoTemporal.png" alt="" width="200" height="65">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php base_url() ?>../">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Directorio</a></li>
-                </ul>
-            </div>
+<div class="padding">
+  <div class="full col-sm-9">
+
+    <!-- content -->                      
+    <div class="row">
+
+     <!-- main col left --> 
+     <div class="col-sm-7">
+      <div class="panel panel-default">
+        <div class="panel-thumbnail"><img src="" class="img-responsive"></div>
+        <div class="panel-body">
+          <p class="lead"></p>
+          <p></p>
+          <a href="#"></a>
         </div>
-    </nav>
-    <!-- Header-->
-    <header class="bg-dark py-5">
-        <div class="container px-5">
-            <div class="row gx-5 justify-content-center">
-                <div class="col-lg-6">
-                    <div class="text-center my-5">
-                        <h1 class="display-5 fw-bolder text-white mb-2">Present your business in a whole new way</h1>
-                        <p class="lead text-white-50 mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit!</p>
-                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
-                            <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="card text-dark bg-light mb-3">
-                        <div class="card-header">Login</div>
-                        <div class="card-body">
-                            <form id="login" action="<?php base_url() ?>login_validation" method="post"> 
-                                <div class="mb-3">
-                                    <label for="inputUsername">Username</label>
-                                    <input class="form-control" type="text" name="username">
-                                    <span class="text-danger"><?php echo form_error('username'); ?></span>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="inputPassword">Password</label>
-                                    <input class="form-control" type="password" name="password">
-                                    <span class="text-danger"><?php echo form_error('password'); ?></span>
-                                </div>
-                                <button class="btn btn-primary" type="submit" name="insert">Iniciar sesión</button>
-                                <?php
-                                echo $this->session->flashdata("error");
-                                ?>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-<!-- Features section-->
-<section class="py-5 border-bottom" id="features">
-    <div class="container px-5 my-5">
-        <div class="row gx-5">
-            <div class="col-lg-4 mb-5 mb-lg-0">
-                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
-                <h2 class="h4 fw-bolder">Featured title</h2>
-                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                <a class="text-decoration-none" href="#!">
-                    Call to action
-                    <i class="bi bi-arrow-right"></i>
-                </a>
-            </div>
-            <div class="col-lg-4 mb-5 mb-lg-0">
-                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
-                <h2 class="h4 fw-bolder">Featured title</h2>
-                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                <a class="text-decoration-none" href="#!">
-                    Call to action
-                    <i class="bi bi-arrow-right"></i>
-                </a>
-            </div>
-            <div class="col-lg-4">
-                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                <h2 class="h4 fw-bolder">Featured title</h2>
-                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                <a class="text-decoration-none" href="#!">
-                    Call to action
-                    <i class="bi bi-arrow-right"></i>
-                </a>
-            </div>
-        </div>
+      </div> 
     </div>
-</section>
 
-<!-- Contact section-->
-    <section class="bg-light py-5">
-        <div class="container px-5 my-5 px-5">
-            <div class="text-center mb-5">
-                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-                <h2 class="fw-bolder">Get in touch</h2>
-                <p class="lead mb-0">We'd love to hear from you</p>
+    <!-- main col right -->
+    <div class="col-sm-5">
+
+      <div class="well"> 
+       <div class="card bg-light text-dark">
+         <div class="card-header bg-dark text-white">Login</div>
+         <div class="card-body">
+           <form class="form" action="<?= base_url() ?>main/login_validation" method="post">
+            <div class="input-group text-center">
+              <input class="form-control input-lg" placeholder="Ingresa tu usuario..." type="text" name     ="username">
             </div>
-            <div class="row gx-5 justify-content-center">
-                <div class="col-lg-6">
-                    <form>
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="inputName" type="text" placeholder="Enter your name..." />
-                            <label for="inputName">Full name</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
-                            <label for="inputEmail">Email address</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="inputPhone" type="tel" placeholder="(123) 456-7890" />
-                            <label for="inputPhone">Phone number</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <textarea class="form-control" id="inputMessage" type="text" placeholder="Enter your message here..." style="height: 10rem"></textarea>
-                            <label for="inputMessage">Message</label>
-                        </div>
-                        <div class="d-grid"><button class="btn btn-primary btn-lg" type="submit">Submit</button></div>
-                    </form>
-                </div>
+            <div class="input-group text-center">
+              <input class="form-control input-lg" placeholder="Ingresa tu contraseña..." type="password" name="password">
             </div>
+            <div class="input-group">
+              <span class="input-group-btn"><button class="btn btn-lg btn-primary" type="submit" style="margin-top: 5px;">Iniciar sesión</button></span>
+            </div>
+          </form>
         </div>
-    </section>
+      </div>
+    </div>
 
+  <div class="panel panel-default">
+   <div class="panel-heading"><h4>Contacto</h4></div>
+   <div class="panel-body">
+    <div class="clearfix"></div>
+    <form>
+      <div class="input-group">
+        <div class="input-group-btn">
+          <button class="btn btn-default"><i class="fas fa-user"></i></button>
+          <span><strong>Nombre:</strong></span>
+        </div>
+      </div>
+      <input class="form-control" placeholder="Ingresa tu nombre.." type="text" name="name">
+      <div class="input-group">
+        <div class="input-group-btn">
+          <button class="btn btn-default"><i class="fas fa-envelope"></i></button>
+          <span><strong>Correo electrónico:</strong></span>
+        </div>
+      </div>
+      <input class="form-control" placeholder="Ingresa tu email.." type="text" name="email">
+      <div class="input-group">
+        <div class="input-group-btn">
+          <button class="btn btn-default"><i class="fas fa-inbox"></i></button>
+          <span><strong>Asunto:</strong></span>
+        </div>
+      </div>
+      <input class="form-control" placeholder="Ingresa el asunto.." type="text" name="issue">
+      <div class="input-group">
+        <div class="input-group-btn">
+          <button class="btn btn-default"><i class="fas fa-sticky-note"></i></button>
+          <span><strong>Mensaje:</strong></span>
+        </div>
+      </div>
+      <textarea class="form-control" placeholder="Mensaje.." name="message"></textarea>
+    </form>
+
+  </div>
+</div>
+
+<div class="panel panel-default">
+ <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Portlet Heading</h4></div>
+ <div class="panel-body">
+  <ul class="list-group">
+    <li class="list-group-item">Modals</li>
+    <li class="list-group-item">Sliders / Carousel</li>
+    <li class="list-group-item">Thumbnails</li>
+  </ul>
+</div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-thumbnail"><img src="assets/img/bg_4.jpg" class="img-responsive"></div>
+  <div class="panel-body">
+    <p class="lead">Social Good</p>
+    <p>1,200 Followers, 83 Posts</p>
+
+    <p>
+      <img src="assets/img/photo.jpg" height="28px" width="28px">
+      <img src="assets/img/photo.png" height="28px" width="28px">
+      <img src="assets/img/photo_002.jpg" height="28px" width="28px">
+    </p>
+  </div>
+</div>
+
+</div>
+</div>
