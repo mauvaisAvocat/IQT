@@ -66,6 +66,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <button class="btn btn-primary" type="submit" name="insert">Iniciar sesión</button>
                                 <?php
                                 echo $this->session->flashdata("error");
+                                if (isset($message))
+                                    echo "<div class='alert alert-danger' role='alert'>.$message.</div>";
                                 ?>
                             </form>
                         </div>

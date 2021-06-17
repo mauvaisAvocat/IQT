@@ -9,6 +9,11 @@ class Post extends CI_Controller
 		$this->load->model('Post_model');
 		$this->load->helper(array('download', 'file', 'url', 'html', 'form'));
 		$this->folder = 'uploads/images/';
+		$config['upload_path'] = $this->folder;
+		$config['allowed_types'] = 'jpeg|jpg|png|gif';
+		$config['remove_spaces'] = TRUE;
+
+		$this->load->library('upload', $config);
 	}
 
 	public function index()
@@ -27,17 +32,12 @@ class Post extends CI_Controller
 
 	public function load_posts()
 	{
-		$config['upload_path'] = $this->folder;
-		$config['allowed_types'] = 'jpeg|jpg|png|gif';
-		$config['remove_spaces'] = TRUE;
-
-		$this->load->library('upload', $config);
 
 		if (!$this->upload->do_upload())
 		{
 			$data['error'] = $this->upload->display_errors();
 			$this->load->view('private/header', array("username" => $this->session->userdata('username')));
-			$this->load->view('private/load_post');
+			$this->load->view('private/load_post', $data);
 			$this->load->view('private/footer');
 		}
 		else
@@ -59,7 +59,6 @@ class Post extends CI_Controller
 			$this->Post_model->insert_post($data);
 
 			$data['archivo'] = $this->upload->data();
-			$data['posts_list'] = $this->Post_model->get_user_posts($this->session->userdata('id'));
 
 			$this->load->view('private/header', array("username" => $this->session->userdata('username')));
 			$this->load->view('private/load_post', $data);
@@ -79,10 +78,9 @@ class Post extends CI_Controller
 		}
 	}
 
-	public function show_posts()
+	public function show_form()
 	{
-		$data['posts_list'] = $this->Post_model->get_user_posts($this->session->userdata('id'));
-		$this->load->view('private/posts', $data);
+		$this->load->view('private/load_post');
 	}
 }
 ?>

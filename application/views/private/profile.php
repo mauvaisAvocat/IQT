@@ -12,7 +12,7 @@
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
                     <ol class="breadcrumb ms-auto">
-                        <li><a href="#" class="fw-normal">Dashboard</a></li>
+                        <li><a href="<?= base_url() ?>main/enter" class="fw-normal">Dashboard</a></li>
                     </ol>
                     <a href="<?= base_url() ?>post/load_posts"
                         class="btn btn-dark  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Posts</a>

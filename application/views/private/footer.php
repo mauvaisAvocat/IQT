@@ -25,7 +25,7 @@
 <script src="<?= base_url() ?>static/js/custom.js"></script>
 <!--This page JavaScript -->
 <script src="<?= base_url() ?>static/js/jquery-3.6.0.min.js"></script>
-<script src="<?= base_url() ?>static/js/profile_form.js"></script>
+<script src="<?= base_url() ?>static/js/scripts.js"></script>
 <!--chartis chart-->
 <script src="<?= base_url() ?>static/plugins/bower_components/chartist/dist/chartist.min.js"></script>
 <script src="<?= base_url() ?>static/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>

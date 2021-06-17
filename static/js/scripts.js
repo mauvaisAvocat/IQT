@@ -1,26 +1,52 @@
-/*!
-    * Start Bootstrap - SB Admin v7.0.0 (https://startbootstrap.com/template/sb-admin)
-    * Copyright 2013-2021 Start Bootstrap
-    * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-sb-admin/blob/master/LICENSE)
-    */
-    // 
-// Scripts
-// 
+$( document ).ready(function(){
+	$( '#address' ).click(function(){
+		$('#address').val('');
+	});
 
-window.addEventListener('DOMContentLoaded', event => {
+	$( '#phone' ).click(function(){
+		$('#phone').val('');
+	});
 
-    // Toggle the side navigation
-    const sidebarToggle = document.body.querySelector('#sidebarToggle');
-    if (sidebarToggle) {
-        // Uncomment Below to persist sidebar toggle between refreshes
-        // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
-        //     document.body.classList.toggle('sb-sidenav-toggled');
-        // }
-        sidebarToggle.addEventListener('click', event => {
-            event.preventDefault();
-            document.body.classList.toggle('sb-sidenav-toggled');
-            localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
-        });
-    }
+	$( '#extension' ).click(function(){
+		$( '#extension' ).val('');
+	});
 
+	$( '#rfc' ).click(function(){
+		$('#rfc').val('');
+	});
+
+	$( '#curp' ).click(function(){
+		$('#curp').val('');
+	});
+	
+	$( '#password' ).click(function(){
+		$('#password').val('');
+	});
+
+	$( '.btn-delete-post' ).click(function(){
+		$( '#modal-nombre-post' ).html($( this ).attr('data-post'));
+		$( '#btn-confirm-delete' ).attr('data-idpost', $( this ).attr('data-idpost'));
+	});     
+
+	$( '#btn-confirm-delete' ).click(function(){
+		location.href = "http://localhost/estadia/post/btn_delete/" + $( this ).attr('data-idpost');
+	});
+
+	$( '.btn-unable-user' ).click(function(){
+		$( '#modal-nombre-usuario' ).html($( this ).attr('data-user'));
+		$( '#btn-confirm-unable' ).attr('data-user', $( this ).attr('data-user'));
+	});
+
+	$( '#btn-confirm-unable' ).click(function(){
+		location.href = "http://localhost/estadia/main/lock_user";
+	});
+
+	$( '#btn-upload-post' ).click(function(){
+		$( '#form-post' ).submit();
+	});
+
+	$( '#btn-upload-file' ).click(function(){
+		$( '#form-file' ).submit();
+	});
+    
 });
