@@ -10,7 +10,7 @@ class Post_model extends CI_Model
 
 	function get_posts()
 	{
-		$query = "SELECT id_post, titulo, mensaje, ruta, post.extension, nom_post, post.id, username, estatus 
+		$query = "SELECT id_post, titulo, mensaje, ruta, fecha, post.extension, nom_post, post.id, username, estatus 
 				FROM post, usuario WHERE post.id = usuario.id AND estatus = 1 ORDER BY id_post DESC LIMIT 5";
 		$res = $this->db->query($query);
 		return $res->result(); 
@@ -18,7 +18,7 @@ class Post_model extends CI_Model
 
 	function get_user_posts($user_id)
 	{
-		$query = "SELECT id_post, titulo, mensaje, ruta, post.extension, nom_post, post.id, username
+		$query = "SELECT id_post, titulo, mensaje, ruta, fecha, post.extension, nom_post, post.id, username
 				FROM post, usuario WHERE post.id = usuario.id AND post.id = ".$user_id;
 		$res = $this->db->query($query);
 		return $res->result();

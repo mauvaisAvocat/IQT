@@ -36,6 +36,7 @@
               <span class="input-group-btn"><button class="btn btn-lg btn-primary" type="submit" style="margin-top: 5px;">Iniciar sesión</button></span>
             </div>
           </form>
+          <?php echo $this->session->flashdata("error"); ?>
         </div>
       </div>
     </div>
@@ -44,37 +45,37 @@
    <div class="panel-heading"><h4>Contacto</h4></div>
    <div class="panel-body">
     <div class="clearfix"></div>
-    <form>
+    <form action="<?= base_url() ?>main/contact" method="post" id="form-contact">
       <div class="input-group">
         <div class="input-group-btn">
           <button class="btn btn-default"><i class="fas fa-user"></i></button>
           <span><strong>Nombre:</strong></span>
         </div>
       </div>
-      <input class="form-control" placeholder="Ingresa tu nombre.." type="text" name="name">
+      <input class="form-control" placeholder="Ingresa tu nombre.." type="text" name="name" required>
       <div class="input-group">
         <div class="input-group-btn">
           <button class="btn btn-default"><i class="fas fa-envelope"></i></button>
           <span><strong>Correo electrónico:</strong></span>
         </div>
       </div>
-      <input class="form-control" placeholder="Ingresa tu email.." type="text" name="email">
+      <input class="form-control" placeholder="Ingresa tu email.." type="text" name="email" required>
       <div class="input-group">
         <div class="input-group-btn">
           <button class="btn btn-default"><i class="fas fa-inbox"></i></button>
           <span><strong>Asunto:</strong></span>
         </div>
       </div>
-      <input class="form-control" placeholder="Ingresa el asunto.." type="text" name="issue">
+      <input class="form-control" placeholder="Ingresa el asunto.." type="text" name="issue" required>
       <div class="input-group">
         <div class="input-group-btn">
           <button class="btn btn-default"><i class="fas fa-sticky-note"></i></button>
           <span><strong>Mensaje:</strong></span>
         </div>
       </div>
-      <textarea class="form-control" placeholder="Mensaje.." name="message"></textarea>
+      <textarea class="form-control" placeholder="Mensaje.." name="message" required></textarea>
+      <button class="btn btn-success" type="button" id="btn-submit-contact">Subir</button>
     </form>
-
   </div>
 </div>
 

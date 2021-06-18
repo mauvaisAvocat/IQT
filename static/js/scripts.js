@@ -48,5 +48,15 @@ $( document ).ready(function(){
 	$( '#btn-upload-file' ).click(function(){
 		$( '#form-file' ).submit();
 	});
+
+	$( '#btn-submit-contact' ).click(function(){
+		$( '#form-contact' ).submit();
+		$( '#form-contact' ).append('<div class="alert alert-success" role="alert">Se ha mandado correctamente</div>');
+	});
+
+	$( '.url-image' ).click(function(){
+		$( '.img-post' ).attr('src', $(this).attr('data-route'));
+		$( '.username-post' ).html($( this ).attr('data-username'));
+	});
     
 });

@@ -25,6 +25,27 @@ class Main extends CI_Controller {
 		}
 	}
 
+	public function contact()
+	{
+		$name = $this->input->post('name');
+		$email = $this->input->post('email');
+		$issue = $this->input->post('issue');
+		$message = $this->input->post('message');
+
+		$data = array(
+			"nombre" => $name,
+			"email" => $email,
+			"asunto" => $issue,
+			"mensaje" => $message
+		);
+
+		$res = $this->Login_model->send_contact($data);
+		if ($res)
+		{
+			redirect(base_url().'main/directory_view');
+		}
+	}
+
 	public function directory_view()
 	{
 		$this->load->view('cover_header');
@@ -57,7 +78,7 @@ class Main extends CI_Controller {
 			}
 			else
 			{
-				$this->session->set_flashdata('error', '<span class="text-danger"><br>Username y password invalidos</span>');
+				$this->session->set_flashdata('error', '<div class="alert alert-danger" role="alert">Username o contraseña inválida</div>');
 				redirect(base_url());
 			}
 		}

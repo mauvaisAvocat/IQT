@@ -54,7 +54,7 @@ class Post extends CI_Controller
 				'ruta' => $route,
 				'extension' => $extension,
 				'nom_post' => $name,
-				'id' => $this->session->userdata('id')
+				'id' => $this->session->userdata('id'),
 			);
 			$this->Post_model->insert_post($data);
 

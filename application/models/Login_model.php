@@ -37,5 +37,11 @@ class Login_model extends CI_Model {
 		$query = "UPDATE usuario SET estatus = 0 WHERE id =".$id;
 		$this->db->query($query);
 	}
+
+	function send_contact($data)
+	{
+		$res = $this->db->insert('contacto', $data);
+		return true;
+	}
 }
 ?>

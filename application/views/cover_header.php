@@ -1,72 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
-        <meta charset="utf-8">
-        <title>Facebook Theme Demo</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link href="<?= base_url() ?>static/css/bootstrap.css" rel="stylesheet">
-        <!--[if lt IE 9]>
-          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        <link href="<?= base_url() ?>static/css/facebook.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="<?= base_url() ?>static/css/bootstrap-icons.css">
-        <link rel="stylesheet" type="text/css" href="<?= base_url() ?>static/fontawesome/css/all.min.css">
-    </head>
-    
-    <body>
-        
-        <div class="wrapper">
-      <div class="box">
-        <div class="row row-offcanvas row-offcanvas-left">
+<head>
 
-          <!-- main right col -->
-          <div class="column col-sm-12 col-xs-11" id="main">
-            
-            <!-- top nav -->
-            <div class="navbar navbar-blue navbar-static-top">  
-              <div class="navbar-header">
-                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                </button>
-                <a href="http://usebootstrap.com/theme/facebook" class="navbar-brand logo">IQT</a>
+  <!-- Basic Page Needs
+================================================== -->
+  <meta charset="utf-8">
+  <title>Constra - Construction Html5 Template</title>
+
+  <!-- Mobile Specific Metas
+================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Construction Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+  <!-- Favicon
+================================================== -->
+  <link rel="icon" type="image/png" href="<?= base_url() ?>static/assets/favicon.ico">
+
+  <!-- CSS
+================================================== -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="<?= base_url() ?>static/bootstrap/css/bootstrap.min.css">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="<?= base_url() ?>static/fontawesome/css/all.min.css">
+  <!-- Animation -->
+  <link rel="stylesheet" href="<?= base_url() ?>static/plugins/animate-css/animate.css">
+  <!-- slick Carousel -->
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+  <!-- Colorbox -->
+  <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
+  <!-- Template styles-->
+  <link rel="stylesheet" href="<?= base_url() ?>static/css/styles_main.css">
+
+</head>
+<body>
+  <div class="body-inner">
+
+    <div id="top-bar" class="top-bar">
+        <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-md-8">
+                <ul class="top-info text-center text-md-left">
+                    <li><i class="fas fa-map-marker-alt"></i> <p class="info-text">9051 Constra Incorporate, USA</p>
+                    </li>
+                </ul>
               </div>
-              <nav class="collapse navbar-collapse" role="navigation">
-                <ul class="nav navbar-nav">
-                <li>
-                <a href="<?= base_url() ?>"><i class="fas fa-home"></i> Inicio</a>
-                </li>
-                <li>
-                <a href="<?= base_url() ?>main/directory_view"><i class="fas fa-book"></i> Directorio</a>
-                </li>
-              </ul>
-              </nav>
-            </div>
-            <!-- /top nav -->
-                <!--post modal-->
-    <div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          Update Status
-        </div>
-        <div class="modal-body">
-          <form class="form center-block">
-          <div class="form-group">
-            <textarea class="form-control input-lg" autofocus="" placeholder="What do you want to share?"></textarea>
+              <!--/ Top info end -->
+  
+              <div class="col-lg-4 col-md-4 top-social text-center text-md-right">
+                <ul class="list-unstyled">
+                    <li>
+                      <a title="Facebook" href="https://facebbok.com/themefisher.com">
+                          <span class="social-icon"><i class="fab fa-facebook-f"></i></span>
+                      </a>
+                      <a title="Twitter" href="https://twitter.com/themefisher.com">
+                          <span class="social-icon"><i class="fab fa-twitter"></i></span>
+                      </a>
+                      <a title="Instagram" href="https://instagram.com/themefisher.com">
+                          <span class="social-icon"><i class="fab fa-instagram"></i></span>
+                      </a>
+                      <a title="Linkdin" href="https://github.com/themefisher.com">
+                          <span class="social-icon"><i class="fab fa-github"></i></span>
+                      </a>
+                    </li>
+                </ul>
+              </div>
+              <!--/ Top social end -->
           </div>
-          </form>
+          <!--/ Content row end -->
         </div>
-        <div class="modal-footer">
-          <div>
-          <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
-          <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
-          </div>  
-        </div>
-      </div>
-      </div>
+        <!--/ Container end -->
     </div>
+    <!--/ Topbar end -->
+<!-- Header start -->
+<header id="header" class="header-one">
+  <div class="bg-white">
+    <div class="container">
+      <div class="logo-area">
+          <div class="row align-items-center">
+            <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
+                <a class="d-block" href="index.html">
+                  <img loading="lazy" src="images/logo.png" alt="Constra">
+                </a>
+            </div><!-- logo end -->
+  
+            <div class="col-lg-9 header-right">
+                <ul class="top-info-box">
+                  <li>
+                    <div class="info-box">
+                      <div class="info-box-content">
+                          <p class="info-box-title">Call Us</p>
+                          <p class="info-box-subtitle">(+9) 847-291-4353</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="info-box">
+                      <div class="info-box-content">
+                          <p class="info-box-title">Email Us</p>
+                          <p class="info-box-subtitle">office@Constra.com</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="last">
+                    <div class="info-box last">
+                      <div class="info-box-content">
+                          <p class="info-box-title">Global Certificate</p>
+                          <p class="info-box-subtitle">ISO 9001:2017</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="header-get-a-quote">
+                    <a class="btn btn-primary" href="contact.html">Get A Quote</a>
+                  </li>
+                </ul><!-- Ul end -->
+            </div><!-- header right end -->
+          </div><!-- logo area end -->
+  
+      </div><!-- Row end -->
+    </div><!-- Container end -->
+  </div>
+
+  <div class="site-navigation">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div id="navbar-collapse" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav mr-auto">
+                      <li class="nav-item">
+                          <a href="#" class="nav-link">Inicio</a>
+                      </li>
+
+                      <li class="nav-item ">
+                          <a href="#" class="nav-link" >Directorio</a>
+                      </li>
+              
+                      <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+              </nav>
+          </div>
+          <!--/ Col end -->
+        </div>
+        <!--/ Row end -->
+
+    </div>
+    <!--/ Container end -->
+
+  </div>
+  <!--/ Navigation end -->
+</header>
+<!--/ Header end -->
+<div id="banner-area" class="banner-area" style="background-image:url(images/banner/banner1.jpg)">
+  <div class="banner-text">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+              <div class="banner-heading">
+                <h1 class="banner-title">News</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                      <li class="breadcrumb-item"><a href="#">Home</a></li>
+                      <li class="breadcrumb-item"><a href="#">News</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">News Right sidebar</li>
+                    </ol>
+                </nav>
+              </div>
+          </div><!-- Col end -->
+        </div><!-- Row end -->
+    </div><!-- Container end -->
+  </div><!-- Banner text end -->
+</div><!-- Banner area end --> 

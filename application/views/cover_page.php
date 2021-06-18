@@ -1,107 +1,254 @@
- 
 
-<div class="padding">
-  <div class="full col-sm-9">
-
-    <!-- content -->                      
+<section id="main-container" class="main-container">
+  <div class="container">
     <div class="row">
 
-     <!-- main col left --> 
-     <div class="col-sm-7">
-      <?php foreach ($posts as $post) : ?>
-      <div class="panel panel-default">
-        <div class="panel-thumbnail"><img src="<?= base_url().$post->ruta ?>" class="img-responsive"></div>
-        <div class="panel-body">
-          <p class="lead"><?= $post->titulo ?></p>
-          <p><?= $post->mensaje ?></p>
-          <a href="#"><?= $post->username ?></a>
-        </div>
-      </div> 
-    <?php endforeach; ?>
-    </div>
+      <div class="col-lg-8 mb-5 mb-lg-0">
 
-    <!-- main col right -->
-    <div class="col-sm-5">
+        <div class="post-content post-single" id="post">
+          <div class="post-media post-image">
+            <img loading="lazy" src="" class="img-fluid img-post" alt="post-image">
+          </div>
 
-      <div class="well"> 
-       <div class="card bg-light text-dark">
-         <div class="card-header bg-dark text-white">Login</div>
-         <div class="card-body">
-           <form class="form" action="<?= base_url() ?>main/login_validation" method="post">
-            <div class="input-group text-center">
-              <input class="form-control input-lg" placeholder="Ingresa tu usuario..." type="text" name     ="username">
-            </div>
-            <div class="input-group text-center">
-              <input class="form-control input-lg" placeholder="Ingresa tu contraseña..." type="password" name="password">
-            </div>
-            <div class="input-group">
-              <span class="input-group-btn"><button class="btn btn-lg btn-primary" type="submit" style="margin-top: 5px;">Iniciar sesión</button></span>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+          <div class="post-body">
+            <div class="entry-header">
+              <div class="post-meta">
+                <span class="post-author">
+                  <i class="far fa-user"></i><a class="username-post" href="#"> Admin</a>
+                </span>
+                <span class="post-cat">
+                  <i class="far fa-folder-open"></i><a href="#"> News</a>
+                </span>
+                <span class="post-meta-date date-post"><i class="far fa-calendar"></i> June 14, 2016</span>
+                <span class="post-comment"><i class="far fa-comment"></i> 03<a href="#"
+                  class="comments-link">Comments</a></span>
+                </div>
+                <h2 class="entry-title tittle-post">
+                  We Just Completes $17.6 million Medical Clinic in Mid-Missouri
+                </h2>
+              </div><!-- header end -->
 
-    <div class="panel panel-default">
-     <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Bootply Editor &amp; Code Library</h4></div>
-     <div class="panel-body">
-      <p><img src="assets/img/150x150.gif" class="img-circle pull-right"> <a href="#">The Bootstrap Playground</a></p>
-      <div class="clearfix"></div>
-      <hr>
-      Design, build, test, and prototype 
-      using Bootstrap in real-time from your Web browser. Bootply combines the
-      power of hand-coded HTML, CSS and JavaScript with the benefits of 
-      responsive design using Bootstrap. Find and showcase Bootstrap-ready 
-      snippets in the 100% free Bootply.com code repository.
-    </div>
-  </div>
+              <div class="entry-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur.</p>
 
-  <div class="panel panel-default">
-   <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Stackoverflow</h4></div>
-   <div class="panel-body">
-    <img src="assets/img/150x150.gif" class="img-circle pull-right"> <a href="#">Keyword: Bootstrap</a>
-    <div class="clearfix"></div>
-    <hr>
+                <p>Kucididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit, sed do</p>
 
-    <p>If you're looking for help with Bootstrap code, the <code>twitter-bootstrap</code> tag at <a href="http://stackoverflow.com/questions/tagged/twitter-bootstrap">Stackoverflow</a> is a good place to find answers.</p>
+                <p>Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut
+                perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. </p>
 
-    <hr>
-    <form>
-      <div class="input-group">
-        <div class="input-group-btn">
-          <button class="btn btn-default">+1</button><button class="btn btn-default"><i class="glyphicon glyphicon-share"></i></button>
-        </div>
-        <input class="form-control" placeholder="Add a comment.." type="text">
-      </div>
-    </form>
+                <blockquote>
+                  <p>Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.<cite>-
+                    Anger Mathe</cite></p>
 
-  </div>
-</div>
+                  </blockquote>
 
-<div class="panel panel-default">
- <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Portlet Heading</h4></div>
- <div class="panel-body">
-  <ul class="list-group">
-    <li class="list-group-item">Modals</li>
-    <li class="list-group-item">Sliders / Carousel</li>
-    <li class="list-group-item">Thumbnails</li>
-  </ul>
-</div>
-</div>
+                  <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+                    sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                    consequuntur magni dolores eos quira tione voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                    dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                  incidunt ue magnam aliquam quaerat voluptatem.</p>
+                </div>
 
-<div class="panel panel-default">
-  <div class="panel-thumbnail"><img src="assets/img/bg_4.jpg" class="img-responsive"></div>
-  <div class="panel-body">
-    <p class="lead">Social Good</p>
-    <p>1,200 Followers, 83 Posts</p>
+                <div class="tags-area d-flex align-items-center justify-content-between">
+                  <div class="post-tags">
+                    <a href="#">Construction</a>
+                    <a href="#">Safety</a>
+                    <a href="#">Planning</a>
+                  </div>
+                  <div class="share-items">
+                    <ul class="post-social-icons list-unstyled">
+                      <li class="social-icons-head">Share:</li>
+                      <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+                      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
 
-    <p>
-      <img src="assets/img/photo.jpg" height="28px" width="28px">
-      <img src="assets/img/photo.png" height="28px" width="28px">
-      <img src="assets/img/photo_002.jpg" height="28px" width="28px">
-    </p>
-  </div>
-</div>
+              </div><!-- post-body end -->
+            </div><!-- post content end -->
 
-</div>
-</div>
+            <div class="author-box d-nlock d-sm-flex">
+              <div class="author-img mb-4 mb-md-0">
+                <img loading="lazy" src="images/news/avator1.png" alt="author">
+              </div>
+              <div class="author-info">
+                <h3>Elton Themen<span>Site Engineer</span></h3>
+                <p class="mb-2">Lisicing elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad vene minim
+                veniam, quis nostrud exercitation nisi ex ea commodo.</p>
+                <p class="author-url mb-0">Website: <span><a href="#">http://www.example.com</a></span></p>
+
+              </div>
+            </div> <!-- Author box end -->
+
+            <!-- Post comment start -->
+            <div id="comments" class="comments-area">
+              <h3 class="comments-heading">07 Comments</h3>
+
+              <ul class="comments-list">
+                <li>
+                  <div class="comment d-flex">
+                    <img loading="lazy" class="comment-avatar" alt="author" src="images/news/avator1.png">
+                    <div class="comment-body">
+                      <div class="meta-data">
+                        <span class="comment-author mr-3">Michelle Aimber</span>
+                        <span class="comment-date float-right">January 17, 2016 at 1:38 pm</span>
+                      </div>
+                      <div class="comment-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehen.</p>
+                      </div>
+                      <div class="text-left">
+                        <a class="comment-reply font-weight-bold" href="#">Reply</a>
+                      </div>
+                    </div>
+                  </div><!-- Comments end -->
+
+                  <ul class="comments-reply">
+                    <li>
+                      <div class="comment d-flex">
+                        <img loading="lazy" class="comment-avatar" alt="author" src="images/news/avator2.png">
+                        <div class="comment-body">
+                          <div class="meta-data">
+                            <span class="comment-author mr-3">Tom Harnandez</span>
+                            <span class="comment-date float-right">January 17, 2016 at 1:38 pm</span>
+                          </div>
+                          <div class="comment-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehen.</p>
+                          </div>
+                          <div class="text-left">
+                            <a class="comment-reply font-weight-bold" href="#">Reply</a>
+                          </div>
+                        </div>
+                      </div><!-- Comments end -->
+                    </li>
+                  </ul><!-- comments-reply end -->
+                  <div class="comment d-flex last">
+                    <img loading="lazy" class="comment-avatar" alt="author" src="images/news/avator3.png">
+                    <div class="comment-body">
+                      <div class="meta-data">
+                        <span class="comment-author mr-3">Genelia Dusteen</span>
+                        <span class="comment-date float-right">January 17, 2016 at 1:38 pm</span>
+                      </div>
+                      <div class="comment-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehen.</p>
+                      </div>
+                      <div class="text-left">
+                        <a class="comment-reply font-weight-bold" href="#">Reply</a>
+                      </div>
+                    </div>
+                  </div><!-- Comments end -->
+                </li><!-- Comments-list li end -->
+              </ul><!-- Comments-list ul end -->
+            </div><!-- Post comment end -->
+
+            <div class="comments-form border-box">
+              <h3 class="title-normal">Add a comment</h3>
+
+              <form role="form">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="message"><textarea class="form-control required-field" id="message" placeholder="Your Comment" rows="10" required></textarea></label>
+                    </div>
+                  </div><!-- Col 12 end -->
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="name"><input class="form-control" name="name" id="name" placeholder="Your Name" type="text" required></label>
+                    </div>
+                  </div><!-- Col 4 end -->
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="email"><input class="form-control" name="email" id="email" placeholder="Your Email" type="email" required></label>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="website"><input class="form-control" id="website" placeholder="Your Website" type="text" required></label>
+                    </div>
+                  </div>
+
+                </div><!-- Form row end -->
+                <div class="clearfix">
+                  <button class="btn btn-primary" type="submit" aria-label="post-comment">Post Comment</button>
+                </div>
+              </form><!-- Form end -->
+            </div><!-- Comments form end -->
+          </div><!-- Content Col end -->
+
+          <div class="col-lg-4">
+
+            <div class="sidebar sidebar-right">
+              <div class="widget">
+                <div class="card text-dark bg-light mb-3">
+                  <div class="card-header bg-dark text-white">Login</div>
+                  <div class="card-body">
+                    <form id="login" action="<?= base_url() ?>main/login_validation" method="post"> 
+                      <div class="mb-3">
+                        <label for="inputUsername">Username</label>
+                        <input class="form-control" type="text" name="username">
+                        <span class="text-danger"><?php echo form_error('username'); ?></span>
+                      </div>
+                      <div class="mb-3">
+                        <label for="inputPassword">Password</label>
+                        <input class="form-control" type="password" name="password">
+                        <span class="text-danger"><?php echo form_error('password'); ?></span>
+                      </div>
+                      <button class="btn btn-primary" type="submit" name="insert">Iniciar sesión</button>
+                      <?php
+                      echo $this->session->flashdata("error");
+                      if (isset($message))
+                        echo "<div class='alert alert-danger' role='alert'>.$message.</div>";
+                      ?>
+                    </form>
+                  </div>
+                </div>
+                <!-- Categories end -->
+
+                <div class="widget recent-posts">
+                  <h3 class="widget-title">Recent Posts</h3>
+                  <ul class="list-unstyled">
+                    <?php foreach ($posts as $post) : ?>
+                      <li class="d-flex align-items-center">
+                        <div class="posts-thumb url-image">
+                          <a href="#post" data-idpost="<?= $post->id_post ?>" data-username="<?= $post->username ?>" data-date="<?= $post->fecha ?>" data-tittle="<?= $post->titulo ?>" data-message="<?= $post->mensaje ?>" data-route="<?= base_url().$post->ruta ?>"><img loading="lazy" alt="img" src="<?= base_url().$post->ruta ?>"></a>
+                        </div>
+                        <div class="post-info">
+                          <h4 class="entry-title url-tittle">
+                            <a href="#" data-idpost="<?= $post->id_post ?>"><?= $post->titulo ?></a>
+                          </h4>
+                        </div>
+                      </li><!-- 1st post end-->
+                    <?php endforeach; ?>
+                  </ul>
+
+                </div><!-- Recent post end -->
+
+
+              </div><!-- Sidebar end -->
+            </div><!-- Sidebar Col end -->
+
+          </div><!-- Main row end -->
+
+        </div><!-- Conatiner end -->
+      </section><!-- Main container end -->
+
