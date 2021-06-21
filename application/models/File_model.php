@@ -29,5 +29,18 @@ class File_model extends CI_Model
 		$res = $this->db->query($query);
 		return $res->result();
 	}
+
+	function insert_folder($data)
+	{
+		$this->db->insert('carpeta', $data);
+		return true;
+	}
+
+	function get_folders()
+	{
+		$query = "SELECT * FROM carpeta";
+		$res = $this->db->query($query);
+		return $res->result();
+	}
 }
 ?>

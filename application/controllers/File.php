@@ -36,7 +36,9 @@ class File extends CI_Controller
 			$error = array(
 				'error' => $this->upload->display_errors()
 			);
-			$this->load->view('private/header', array("username" => $this->session->userdata('username')));
+			$data['folders_list'] = $this->File_model->get_folders();
+			$data['username'] = $this->session->userdata('username');
+			$this->load->view('private/header', $data);
 			$this->load->view('private/load_files', $error);
 			$this->load->view('private/footer');
 		}
@@ -58,7 +60,9 @@ class File extends CI_Controller
 			$res = $this->File_model->insert_file($data);
 			
 			$data['archivo'] = $this->upload->data();
-			$this->load->view('private/header', array("username" => $this->session->userdata('username')));
+			$data['folders_list'] = $this->File_model->get_folders();
+			$data['username'] = $this->session->userdata('username');
+			$this->load->view('private/header', $data);
 			$this->load->view('private/load_files', $data);
 			$this->load->view('private/footer');
 		}
@@ -75,10 +79,27 @@ class File extends CI_Controller
 	{
 		$data['files'] = $this->File_model->get_files();
 		$data['message'] = "No hay archivos";
+		$data['folders_list'] = $this->File_model->get_folders();
+		$data['username'] = $this->session->userdata('username');
 
-		$this->load->view('private/header', array("username" => $this->session->userdata('username')));
+		$this->load->view('private/header', $data);
 		$this->load->view('private/files', $data);
 		$this->load->view('private/footer');
 	}
+
+	public function upload_folder()
+	{
+		$folder_name = $this->input->post('foldername');
+		$data = array(
+			"nombre" => $folder_name,
+		);
+
+		$res = $this->File_model->insert_folder($data);
+		if ($res)
+		{
+			redirect(base_url().'main/enter');
+		}
+	}
+
 } 
 ?>

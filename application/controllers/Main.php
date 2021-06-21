@@ -7,6 +7,7 @@ class Main extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Login_model');
 		$this->load->model('Post_model');
+		$this->load->model('File_model');
 		$this->load->library('encryption');
 
 	}
@@ -42,7 +43,7 @@ class Main extends CI_Controller {
 		$res = $this->Login_model->send_contact($data);
 		if ($res)
 		{
-			redirect(base_url().'main/directory_view');
+			redirect(base_url());
 		}
 	}
 
@@ -94,7 +95,9 @@ class Main extends CI_Controller {
 		if ($this->session->userdata('username') != '' && $res->estatus == 1) 
 		{
 			$data['posts_list'] = $this->Post_model->get_user_posts($this->session->userdata('id'));
-			$this->load->view('private/header', array("username" => $username));
+			$data['folders_list'] = $this->File_model->get_folders();
+			$data['username'] = $username;
+			$this->load->view('private/header', $data);
 			$this->load->view('private/posts', $data);
 			$this->load->view('private/footer');	
 		}
@@ -123,8 +126,10 @@ class Main extends CI_Controller {
 			"curp" => $res->curp,
 			"password" => $res->password
 		);
+		$data['folders_list'] = $this->File_model->get_folders();
+		$data['username'] = $username;
 
-		$this->load->view('private/header', array("username" => $username));
+		$this->load->view('private/header', $data);
 		$this->load->view('private/profile', $data);
 		$this->load->view('private/footer');
 	}
@@ -153,7 +158,9 @@ class Main extends CI_Controller {
 	public function load_files()
 	{
 		$username = $this->session->userdata('username');
-		$this->load->view('private/header', array("username" => $username));
+		$data['folders_list'] = $this->File_model->get_folders();
+		$data['username'] = $username;
+		$this->load->view('private/header', $data);
 		$this->load->view('private/load_files');
 		$this->load->view('private/footer');
 	}

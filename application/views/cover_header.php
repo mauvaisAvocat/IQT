@@ -141,7 +141,7 @@
                           <a href="#" class="nav-link" >Directorio</a>
                       </li>
               
-                      <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#contact-us">Contacto</a></li>
                     </ul>
                 </div>
               </nav>

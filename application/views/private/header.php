@@ -151,6 +151,12 @@ data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layo
                                         <span class="hide-menu">Posts</span>
                                     </a>
                                 </li>
+                                <li class="sidebar-nav">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false">
+                                        <i class="fas fa-address-book" style="margin-right: 5px;"></i>
+                                        <span class="hide-menu">Directorio</span>
+                                    </a>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -164,12 +170,14 @@ data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layo
                     <div class="collapse" id="carpetas" aria-labelledby="headingTwo" data-bs-parent="#sideAccordionArchivo">
                         <nav class="nav-link">
                            <ul>
+                            <?php foreach($folders_list as $folder) : ?>
                                <li class="sidebar-nav">
                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>main/load_files" aria-expanded="false">
-                                    <i class="fas fa-file-upload" aria-hidden="true" style="margin-right: 5px;"></i>
-                                    <span class="hide-menu">Subir archivos</span>
+                                    <i class="fas fa-folder" aria-hidden="true" style="margin-right: 5px;"></i>
+                                    <span class="hide-menu"><?= $folder->nombre ?></span>
                                 </a>
                             </li>
+                            <?php endforeach; ?>
                             <li class="sidebar-nav">
                                 <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>file/show_files" aria-expanded="false">
                                     <i class="fas fa-search" aria-hidden="true" style="margin-right: 5px;"></i>
@@ -179,6 +187,21 @@ data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layo
                         </ul>
                     </nav>
                 </div>
+            </li>
+            <!-- New folder -->
+            <li class="sidebar-item show-alert" style="margin-left: 15px;">
+                <form action="<?= base_url() ?>file/upload_folder" method="post" id="folder-form">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" name="foldername" placeholder="Nueva carpeta..." required>
+                        </div>
+                        <div class="col-md-4">
+                            <button  type="button" class="btn btn-primary" id="new-folder">
+                                <i class="fas fa-folder-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </li>
         </ul>
 

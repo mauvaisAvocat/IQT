@@ -102,7 +102,8 @@
   <script src="plugins/google-map/map.js" defer></script>
 
   <!-- Template custom -->
-  <script src="js/script.js"></script>
+  <script src="<?= base_url() ?>static/js/scripts.js"></script>
+
 
   </div><!-- Body inner end -->
   </body>

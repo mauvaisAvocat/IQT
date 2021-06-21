@@ -7,6 +7,7 @@ class Post extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Post_model');
+		$this->load->model('File_model');
 		$this->load->helper(array('download', 'file', 'url', 'html', 'form'));
 		$this->folder = 'uploads/images/';
 		$config['upload_path'] = $this->folder;
@@ -36,7 +37,9 @@ class Post extends CI_Controller
 		if (!$this->upload->do_upload())
 		{
 			$data['error'] = $this->upload->display_errors();
-			$this->load->view('private/header', array("username" => $this->session->userdata('username')));
+			$data['folders_list'] = $this->File_model->get_folders();
+			$data['username'] = $this->session->userdata('username');
+			$this->load->view('private/header', $data);
 			$this->load->view('private/load_post', $data);
 			$this->load->view('private/footer');
 		}
@@ -59,8 +62,10 @@ class Post extends CI_Controller
 			$this->Post_model->insert_post($data);
 
 			$data['archivo'] = $this->upload->data();
+			$data['folders_list'] = $this->File_model->get_folders();
+			$data['username'] = $this->session->userdata('username');
 
-			$this->load->view('private/header', array("username" => $this->session->userdata('username')));
+			$this->load->view('private/header', $data);
 			$this->load->view('private/load_post', $data);
 			$this->load->view('private/footer');
 		}
@@ -72,7 +77,9 @@ class Post extends CI_Controller
 		{
 			$data['posts_list'] = $this->Post_model->get_user_posts($this->session->userdata('id'));
 			$data['message'] = "Se ha eliminado exitosamente";
-			$this->load->view('private/header', array("username" => $this->session->userdata('username')));
+			$data['folders_list'] = $this->File_model->get_folders();
+			$data['username'] = $this->session->userdata('username');
+			$this->load->view('private/header', $data);
 			$this->load->view('private/posts', $data);
 			$this->load->view('private/footer');
 		}

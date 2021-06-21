@@ -50,13 +50,20 @@ $( document ).ready(function(){
 	});
 
 	$( '#btn-submit-contact' ).click(function(){
-		$( '#form-contact' ).submit();
-		$( '#form-contact' ).append('<div class="alert alert-success" role="alert">Se ha mandado correctamente</div>');
+		$( '#contact-form' ).append('<div class="alert alert-success" role="alert">Se ha enviado correctamente</div>');
 	});
 
-	$( '.url-image' ).click(function(){
-		$( '.img-post' ).attr('src', $(this).attr('data-route'));
+	$( '.url-info' ).click(function(){
+		$( '#image-post-user' ).attr('src', $(this).attr('data-route'));
 		$( '.username-post' ).html($( this ).attr('data-username'));
+		$( '.date-post' ).html($( this ).attr('data-date'));
+		$( '.tittle-post' ).html($( this ).attr('data-tittle'));
+		$( '.message-post' ).html($( this ).attr('data-message'));
+	});
+
+	$( '#new-folder' ).click(function(){
+		$( '#folder-form' ).submit();
+		$( '.show-alert' ).append("<div class='alert alert-success' role='alert'>Se agregó carpeta exitosamente</div>");
 	});
     
 });

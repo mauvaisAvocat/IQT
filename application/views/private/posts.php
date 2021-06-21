@@ -77,7 +77,7 @@
                                     <div class="card-title"><?= $post->titulo ?></div>
                                     <div class="card-body">
                                         <p class="card-text"><?= $post->mensaje ?></p>
-                                        <a class="btn btn-outline-primary" href="#"><?= $post->username ?></a>
+                                        <a href="#"><?= $post->username ?></a>
                                     </div>
                                     <div class="card-footer">
                                         <button type="button" class="btn btn-danger btn-delete-post" data-bs-toggle="modal" data-bs-target="#post-modal" data-idpost="<?= $post->id_post ?>" data-post="<?= $post->titulo ?>">Eliminar</button>
