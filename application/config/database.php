@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost:3307',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'bd_awos_t193',
-	'dbdriver' => 'mysqli',
+	'hostname' => 'IQTSVR02',
+	'username' => 'iqtnet',
+	'password' => 'IQT@intr@n3t--',
+	'database' => 'Intranet',
+	'dbdriver' => 'sqlsrv',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),

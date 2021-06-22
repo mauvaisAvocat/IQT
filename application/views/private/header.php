@@ -93,7 +93,7 @@ data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layo
         <!-- ============================================================== -->
         <!-- End Logo -->
         <!-- ============================================================== -->
-        <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+        <div class="navbar-collapse collapse" id="navbarSupportedContent" style="background: #462B50;">
 
             <!-- ============================================================== -->
             <!-- Right side toggle and nav items -->
@@ -152,7 +152,7 @@ data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layo
                                     </a>
                                 </li>
                                 <li class="sidebar-nav">
-                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>main/directory" aria-expanded="false">
                                         <i class="fas fa-address-book" style="margin-right: 5px;"></i>
                                         <span class="hide-menu">Directorio</span>
                                     </a>

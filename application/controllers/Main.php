@@ -171,4 +171,13 @@ class Main extends CI_Controller {
 		$this->Login_model->update_status($id);
 		redirect(base_url());
 	}
+
+	public function directory()
+	{
+		$data['folders_list'] = $this->File_model->get_folders();
+		$data['username'] = $this->session->userdata('username');
+		$this->load->view('private/header', $data);
+		$this->load->view('private/directory');
+		$this->load->view('private/footer');
+	}
 }
