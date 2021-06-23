@@ -14,35 +14,13 @@ class Main extends CI_Controller {
 
 	public function index()
 	{
-		$data['posts'] = $this->Post_model->get_posts();
 		$this->load->view('cover_header');
-		$this->load->view('cover_page', $data);
+		$this->load->view('cover_page');
 		$this->load->view('cover_footer');
 		$this->load->helper('url');
 		if ($this->session->userdata('username') != "")
 		{
 			$this->session->unset_userdata('username');
-			redirect(base_url());
-		}
-	}
-
-	public function contact()
-	{
-		$name = $this->input->post('name');
-		$email = $this->input->post('email');
-		$issue = $this->input->post('issue');
-		$message = $this->input->post('message');
-
-		$data = array(
-			"nombre" => $name,
-			"email" => $email,
-			"asunto" => $issue,
-			"mensaje" => $message
-		);
-
-		$res = $this->Login_model->send_contact($data);
-		if ($res)
-		{
 			redirect(base_url());
 		}
 	}
@@ -62,15 +40,15 @@ class Main extends CI_Controller {
 
 		if ($this->form_validation->run())
 		{
-			$username = $this->input->post('username');
+			$email = $this->input->post('username');
 			$password = $this->input->post('password');
-			$resp = $this->Login_model->login($username, $password);
+			$resp = $this->Login_model->login($email);
 
 			if ($resp) 
 			{
 				$data = array(
-					"id" => $resp->id,
-					"username" => $resp->username,
+					"id" => $resp->Id_control,
+					"username" => $resp->correo,
 					"login" => TRUE
 				);
 
@@ -91,12 +69,12 @@ class Main extends CI_Controller {
 
 	public function enter() {
 		$res = $this->Login_model->get_user($this->session->userdata('id'));
-		$username = $this->session->userdata('username');
-		if ($this->session->userdata('username') != '' && $res->estatus == 1) 
+		$email = $this->session->userdata('username');
+		if ($this->session->userdata('username') != '' && $res->Status == 'Activo') 
 		{
-			$data['posts_list'] = $this->Post_model->get_user_posts($this->session->userdata('id'));
+			$data['posts_list'] = $this->Post_model->get_posts();
 			$data['folders_list'] = $this->File_model->get_folders();
-			$data['username'] = $username;
+			$data['username'] = $email;
 			$this->load->view('private/header', $data);
 			$this->load->view('private/posts', $data);
 			$this->load->view('private/footer');	

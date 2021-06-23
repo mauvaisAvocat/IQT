@@ -3,11 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login_model extends CI_Model {
 
-	function login($username, $password) 
+	function login($email) 
 	{
-		$this->db->where('username', $username);
-		$this->db->where('password', $password);
-		$result = $this->db->get('usuario');
+		$this->db->where('correo', $email);
+		$result = $this->db->get('Empleados');
 		
 		if ($result->num_rows() > 0) {
 			return $result->row();
@@ -19,8 +18,8 @@ class Login_model extends CI_Model {
 
 	function get_user($id) 
 	{
-		$this->db->where('id', $id);
-		$res = $this->db->get('usuario');
+		$this->db->where('Id_control', $id);
+		$res = $this->db->get('Empleados');
 
 		$array = $res->result();
 		return $array[0];
@@ -28,20 +27,15 @@ class Login_model extends CI_Model {
 
 	function update_user($id, $data)
 	{
-		$this->db->where('id', $id);
-		$this->db->update('usuario', $data);
+		$this->db->where('Id_control', $id);
+		$this->db->update('Empleados', $data);
 	}
 
 	function update_status($id)
 	{
-		$query = "UPDATE usuario SET estatus = 0 WHERE id =".$id;
+		$query = "UPDATE EMPLEADOS SET ESTATUS = 'A' WHERE Id_control =".$id;
 		$this->db->query($query);
 	}
 
-	function send_contact($data)
-	{
-		$res = $this->db->insert('contacto', $data);
-		return true;
-	}
 }
 ?>

@@ -169,18 +169,18 @@
             <div class="widget recent-posts">
               <h3 class="widget-title">Recent Posts</h3>
               <ul class="list-unstyled">
-                <?php foreach ($posts as $post) : ?>
+            
                   <li class="d-flex align-items-center">
                     <div class="posts-thumb">
-                      <a><img loading="lazy" alt="img" src="<?= base_url().$post->ruta ?>"></a>
+                      <a><img loading="lazy" alt="img" src=""></a>
                     </div>
                     <div class="post-info">
                       <h4 class="entry-title url-tittle">
-                        <a class="url-info" href="#post" data-idpost="<?= $post->id_post ?>" data-username="<?= $post->username ?>" data-date="<?= $post->fecha ?>" data-tittle="<?= $post->titulo ?>" data-message="<?= $post->mensaje ?>" data-route="<?= base_url().$post->ruta ?>"><?= $post->titulo ?></a>
+                        <a class="url-info" href="#post" data-idpost="" data-username="" data-date="" data-tittle="" data-message="" data-route="">Prueba</a>
                       </h4>
                     </div>
                   </li><!-- 1st post end-->
-                <?php endforeach; ?>
+        
               </ul>
 
             </div><!-- Recent post end -->
@@ -190,7 +190,7 @@
               <div class="card text-dark bg-light mb-3">
                 <div class="card-header bg-dark text-white">Contacto</div>
                 <div class="card-body">
-                  <form id="contact-form" action="<?= base_url() ?>main/contact" method="post"> 
+                  <form id="contact-form" action="" method="post"> 
                     <div class="form-group">
                       <label for="inputName">Nombre:</label>
                       <input class="form-control" type="text" name="name" required>

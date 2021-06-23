@@ -47,15 +47,12 @@ class File extends CI_Controller
 			$date = $this->input->post('date');
 			$description = $this->input->post('description');
 			$file_name = $this->upload->data('file_name');
-			$file_extension = $this->upload->data('file_ext');
-			$row_name = $this->upload->data('raw_name');
 			$data = array(
-			"nombre" => $row_name,
-			"fecha" => $date,
-			"descripcion" => $description,
-			"ruta" => $this->folder.$file_name,
-			"extension" => $file_extension,
-			"nom_arch" => $file_name
+			"NOMBRE" => $row_name,
+			"DESCRIPCION" => $description,
+			"RUTA" => $this->folder.$file_name,
+			"ESTATUS" => "A",
+			"FECHA" => $date
 			);
 			$res = $this->File_model->insert_file($data);
 			
@@ -91,7 +88,8 @@ class File extends CI_Controller
 	{
 		$folder_name = $this->input->post('foldername');
 		$data = array(
-			"nombre" => $folder_name,
+			"NOMBRE" => $folder_name,
+			"ESTATUS" => 'A'
 		);
 
 		$res = $this->File_model->insert_folder($data);

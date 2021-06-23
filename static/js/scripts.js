@@ -65,5 +65,9 @@ $( document ).ready(function(){
 		$( '#folder-form' ).submit();
 		$( '.show-alert' ).append("<div class='alert alert-success' role='alert'>Se agregó carpeta exitosamente</div>");
 	});
+
+	$( '.send-id-carpeta' ).click(function(){
+		
+	});
     
 });

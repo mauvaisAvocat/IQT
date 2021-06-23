@@ -165,16 +165,16 @@ data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layo
                 <li class="sidebar-item" id="sideAccordionArchivo">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" data-bs-toggle="collapse" data-bs-target="#carpetas" aria-expanded="false" aria-controls="carpetas">
                         <i class="fas fa-folder-open" aria-hidden="true" style="margin-right: 5px"></i>
-                        <span class="hide-menu">Archivos</span>
+                        <span class="hide-menu">Carpetas</span>
                     </a>
                     <div class="collapse" id="carpetas" aria-labelledby="headingTwo" data-bs-parent="#sideAccordionArchivo">
                         <nav class="nav-link">
                            <ul>
                             <?php foreach($folders_list as $folder) : ?>
                                <li class="sidebar-nav">
-                                   <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>main/load_files" aria-expanded="false">
+                                   <a class="sidebar-link waves-effect waves-dark sidebar-link send-id-carpeta" href="<?= base_url() ?>main/load_files" aria-expanded="false" data-idcarpeta="<?= $folder->ID ?>">
                                     <i class="fas fa-folder" aria-hidden="true" style="margin-right: 5px;"></i>
-                                    <span class="hide-menu"><?= $folder->nombre ?></span>
+                                    <span class="hide-menu"><?= $folder->NOMBRE ?></span>
                                 </a>
                             </li>
                             <?php endforeach; ?>

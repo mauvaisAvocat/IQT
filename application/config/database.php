@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'IQTSVR02',
+	'hostname' => 'IQTSVR02\SQLEXPRESS',
 	'username' => 'iqtnet',
 	'password' => 'IQT@intr@n3t--',
 	'database' => 'Intranet',
