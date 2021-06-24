@@ -7,7 +7,7 @@
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">Diectorio</h4>
+                <h4 class="page-title">Directorio</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
@@ -36,10 +36,40 @@
     <div class="row">
         <div class="col-md-12">
             <!--  -->
-
-            <div class="white-box collapse" id="posts-views">
-                <div class="container px-5 my-5">
-
+            <div class="white-box">
+                <div class="card-header"><i class="fas fa-address-book me-1"></i>Directorios</div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Area</th>
+                                <th>Puesto</th>
+                                <th>Teléfono</th>
+                                <th>Correo</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Area</th>
+                                <th>Puesto</th>
+                                <th>Teléfono</th>
+                                <th>Correo</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <?php foreach ($info_list as $info) : ?>
+                            <tr>
+                                <td><?= $info->Nombre.' '.$info->Apellido_paterno.' '.$info->Apellido_materno ?></td>
+                                <td><?= $info->NOMBRE ?></td>
+                                <td><?= $info->Puesto ?></td>
+                                <td><?= $info->Telefono ?></td>
+                                <td><?= $info->correo ?></td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

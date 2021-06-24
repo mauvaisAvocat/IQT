@@ -8,6 +8,7 @@ class Main extends CI_Controller {
 		$this->load->model('Login_model');
 		$this->load->model('Post_model');
 		$this->load->model('File_model');
+		$this->load->model('Directory_model');
 		$this->load->library('encryption');
 
 	}
@@ -74,6 +75,7 @@ class Main extends CI_Controller {
 		{
 			$data['posts_list'] = $this->Post_model->get_posts();
 			$data['folders_list'] = $this->File_model->get_folders();
+			$data['direction_list'] = $this->Directory_model->get_direction();
 			$data['username'] = $email;
 			$this->load->view('private/header', $data);
 			$this->load->view('private/posts', $data);
@@ -105,6 +107,7 @@ class Main extends CI_Controller {
 			"password" => $res->password
 		);
 		$data['folders_list'] = $this->File_model->get_folders();
+		$data['direction_list'] = $this->Directory_model->get_direction();
 		$data['username'] = $username;
 
 		$this->load->view('private/header', $data);
@@ -137,6 +140,7 @@ class Main extends CI_Controller {
 	{
 		$username = $this->session->userdata('username');
 		$data['folders_list'] = $this->File_model->get_folders();
+		$data['direction_list'] = $this->Directory_model->get_direction();
 		$data['username'] = $username;
 		$this->load->view('private/header', $data);
 		$this->load->view('private/load_files');
@@ -150,12 +154,14 @@ class Main extends CI_Controller {
 		redirect(base_url());
 	}
 
-	public function directory()
+	public function directory($id_direction)
 	{
 		$data['folders_list'] = $this->File_model->get_folders();
+		$data['direction_list'] = $this->Directory_model->get_direction();
+		$data['info_list'] = $this->Directory_model->get_info($id_direction);
 		$data['username'] = $this->session->userdata('username');
 		$this->load->view('private/header', $data);
-		$this->load->view('private/directory');
+		$this->load->view('private/directory', $data);
 		$this->load->view('private/footer');
 	}
 }

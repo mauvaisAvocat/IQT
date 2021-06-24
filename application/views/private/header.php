@@ -152,10 +152,24 @@ data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layo
                                     </a>
                                 </li>
                                 <li class="sidebar-nav">
-                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>main/directory" aria-expanded="false">
-                                        <i class="fas fa-address-book" style="margin-right: 5px;"></i>
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" data-bs-toggle="collapse" data-bs-target="#directorio" aria-expanded="false" aria-controls="directorio">
+                                        <i class="fas fa-address-book" aria-hidden="true" style="margin-right: 5px;"></i>
                                         <span class="hide-menu">Directorio</span>
                                     </a>
+                                    <div class="collapse" id="directorio">
+                                        <nav class="nav-link">
+                                            <ul>
+                                                <?php foreach ($direction_list as $direction) : ?>
+                                                <li class="sidebar-nav">
+                                                    <a class="sidebar-link waves-effect waves-dark sidebar-link url-direction" aria-expanded="false" data-iddirection="<?= $direction->ID ?>">
+                                                       <span class="hide-menu" style="font-size: 12px;"><?= $direction->NOMBRE ?>
+                                                       </span> 
+                                                    </a>
+                                                </li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        </nav>
+                                    </div>
                                 </li>
                             </ul>
                         </nav>
@@ -172,18 +186,12 @@ data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layo
                            <ul>
                             <?php foreach($folders_list as $folder) : ?>
                                <li class="sidebar-nav">
-                                   <a class="sidebar-link waves-effect waves-dark sidebar-link send-id-carpeta" href="<?= base_url() ?>main/load_files" aria-expanded="false" data-idcarpeta="<?= $folder->ID ?>">
+                                   <a class="sidebar-link waves-effect waves-dark sidebar-link send-id-carpeta" aria-expanded="false" data-idcarpeta="<?= $folder->ID ?>">
                                     <i class="fas fa-folder" aria-hidden="true" style="margin-right: 5px;"></i>
                                     <span class="hide-menu"><?= $folder->NOMBRE ?></span>
                                 </a>
                             </li>
                             <?php endforeach; ?>
-                            <li class="sidebar-nav">
-                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?=base_url()?>file/show_files" aria-expanded="false">
-                                    <i class="fas fa-search" aria-hidden="true" style="margin-right: 5px;"></i>
-                                    <span class="hide-menu">Consultar archivos</span>
-                                </a>
-                            </li>
                         </ul>
                     </nav>
                 </div>

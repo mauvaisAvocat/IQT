@@ -8,17 +8,17 @@ class File_model extends CI_Model
 		$this->db->insert('Archivos', $data);
 	}
 
-	function get_files()
+	function get_files($id_carpeta)
 	{
-		$query = "SELECT * FROM Archivos";
+		$query = "SELECT * FROM Archivos WHERE ID_CARPETA=".$id_carpeta;
 		$res = $this->db->query($query);
 		return $res->result();
 	}
 
-	function get_rute($name)
+	function get_rute($id_file, $id_carpeta)
 	{
-		$this->db->where('NOMBRE', $name);
-		$res = $this->db->get('Archivos');
+		$query = "SELECT * FROM Archivos WHERE ID=$id_file AND ID_CARPETA=".$id_carpeta;
+		$res = $this->db->query($query);
 		$array = $res->result();
 		return $array[0];
 	}
@@ -43,9 +43,5 @@ class File_model extends CI_Model
 		return $res->result();
 	}
 
-	function get_id_folder($id_carpeta, $id_archivo)
-	{
-		$query = "UPDATE Archivos SET ID_CARPETA=$id_carpeta WHERE ID=".$id_archivo;
-	}
 }
 ?>

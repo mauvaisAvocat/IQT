@@ -46,6 +46,7 @@ $( document ).ready(function(){
 	});
 
 	$( '#btn-upload-file' ).click(function(){
+		$( '#form-file' ).attr('action', 'http://localhost/estadia/file/load_files/' + $( '.send-id-carpeta' ).attr('data-idcarpeta'));
 		$( '#form-file' ).submit();
 	});
 
@@ -67,7 +68,11 @@ $( document ).ready(function(){
 	});
 
 	$( '.send-id-carpeta' ).click(function(){
-		
+		location.href = "http://localhost/estadia/file/show_files/" + $( this ).attr('data-idcarpeta');
+	});
+
+	$( '.url-direction' ).click(function(){
+		location.href = "http://localhost/estadia/main/directory/" + $( this ).attr('data-iddirection');
 	});
     
 });

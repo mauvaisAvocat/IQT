@@ -73,14 +73,14 @@
                         <div class="row gx-5">
                             <?php foreach ($posts_list as $post) : ?>
                                 <div class="card col-sm-4 offset-sm-1 border border-2">
-                                    <img class="card-img-top" src="<?= base_url().$post->ruta ?>">
-                                    <div class="card-title"><?= $post->titulo ?></div>
+                                    <img class="card-img-top" src="">
+                                    <div class="card-title"></div>
                                     <div class="card-body">
-                                        <p class="card-text"><?= $post->mensaje ?></p>
-                                        <a href="#"><?= $post->username ?></a>
+                                        <p class="card-text"></p>
+                                        <a href="#"></a>
                                     </div>
                                     <div class="card-footer">
-                                        <button type="button" class="btn btn-danger btn-delete-post" data-bs-toggle="modal" data-bs-target="#post-modal" data-idpost="<?= $post->id_post ?>" data-post="<?= $post->titulo ?>">Eliminar</button>
+                                        <button type="button" class="btn btn-danger btn-delete-post" data-bs-toggle="modal" data-bs-target="#post-modal" data-idpost="" data-post="">Eliminar</button>
                                     </div>
                                 </div>  
                             <?php endforeach; ?>

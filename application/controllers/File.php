@@ -7,6 +7,7 @@ class File extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('File_model');
+		$this->load->model('Directory_model');
 		$this->load->helper(array('download', 'file', 'url', 'html', 'form'));
 		$this->folder = 'uploads/files/';
 	}
@@ -24,7 +25,7 @@ class File extends CI_Controller
 		}
 	}
 
-	public function load_files()
+	public function load_files($id_carpeta)
 	{
 		$config['upload_path'] = $this->folder;
 		$config['allowed_types'] = '*';
@@ -37,6 +38,7 @@ class File extends CI_Controller
 				'error' => $this->upload->display_errors()
 			);
 			$data['folders_list'] = $this->File_model->get_folders();
+			$data['direction_list'] = $this->Directory_model->get_direction();
 			$data['username'] = $this->session->userdata('username');
 			$this->load->view('private/header', $data);
 			$this->load->view('private/load_files', $error);
@@ -48,16 +50,18 @@ class File extends CI_Controller
 			$description = $this->input->post('description');
 			$file_name = $this->upload->data('file_name');
 			$data = array(
-			"NOMBRE" => $row_name,
+			"NOMBRE" => $file_name,
 			"DESCRIPCION" => $description,
 			"RUTA" => $this->folder.$file_name,
 			"ESTATUS" => "A",
-			"FECHA" => $date
+			"FECHA" => $date,
+			"ID_CARPETA" => $id_carpeta
 			);
 			$res = $this->File_model->insert_file($data);
 			
 			$data['archivo'] = $this->upload->data();
 			$data['folders_list'] = $this->File_model->get_folders();
+			$data['direction_list'] = $this->Directory_model->get_direction();
 			$data['username'] = $this->session->userdata('username');
 			$this->load->view('private/header', $data);
 			$this->load->view('private/load_files', $data);
@@ -65,18 +69,20 @@ class File extends CI_Controller
 		}
 	}
 
-	public function download_file($name)
+	public function download_file($id_file, $id_carpeta)
 	{
-		$res = $this->File_model->get_rute($name);
-		$data = file_get_contents($res->ruta);
+		$res = $this->File_model->get_rute($id_file, $id_carpeta);
+		$data = file_get_contents($res->RUTA);
+		$name = $res->NOMBRE;
 		force_download($name, $data);
 	}
 
-	public function show_files()
+	public function show_files($id_carpeta)
 	{
-		$data['files'] = $this->File_model->get_files();
+		$data['files'] = $this->File_model->get_files($id_carpeta);
 		$data['message'] = "No hay archivos";
 		$data['folders_list'] = $this->File_model->get_folders();
+		$data['direction_list'] = $this->Directory_model->get_direction();
 		$data['username'] = $this->session->userdata('username');
 
 		$this->load->view('private/header', $data);

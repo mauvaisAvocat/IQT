@@ -7,7 +7,7 @@
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title"><i class="fas fa-file" style="margin-right: 5px"></i>Consultar archivos</h4>
+                <h4 class="page-title">Consultar archivos</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
@@ -27,7 +27,7 @@
                                 <div class="modal-body">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form action="<?= base_url() ?>file/load_files" method="post" enctype="multipart/form-data" id="form-file">
+                                            <form action="" method="post" enctype="multipart/form-data" id="form-file">
                                                 <div class="mb-3">
                                                     <label for="inputDocument">Fecha:</label>
                                                     <input class="form-control" type="date" name="date" id="date">
@@ -68,39 +68,35 @@
                 <div class="col-md-12">
                     <div class="white-box">
                         <?php if (count($files) > 0): ?>
-                            <h3 class="box-title">Documentos</h3>
                             <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                Files
+                                <i class="fas fa-file me-1"></i>
+                                Documentos
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
                                             <th>Nombre</th>
-                                            <th>Fecha</th>
                                             <th>Descripción</th>
-                                            <th>Extensión</th>
+                                            <th>Fecha</th>
                                             <th>Archivo</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>Nombre</th>
-                                            <th>Fecha</th>
                                             <th>Descripción</th>
-                                            <th>Extensión</th>
+                                            <th>Fecha</th>
                                             <th>Archivo</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <?php foreach ($files as $file) : ?>
                                             <tr>
-                                                <td><?= $file->nombre ?></td>
-                                                <td><?= $file->fecha ?></td>
-                                                <td><?= $file->descripcion ?></td>
-                                                <td><?= $file->extension ?></td>
-                                                <td><a href="<?= base_url() ?>file/download_file/<?= $file->nom_arch ?>"><?= $file->nom_arch ?></a></td>
+                                                <td><?= $file->NOMBRE ?></td>
+                                                <td><?= $file->DESCRIPCION ?></td>
+                                                <td><?= $file->FECHA ?></td>
+                                                <td><a class="btn btn-primary" href="<?= base_url().'file/download_file/'.$file->ID.'/'.$file->ID_CARPETA ?>"><i class="fas fa-file-download" style="margin-right: 5px;"></i>Descargar</a></td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>

@@ -1,4 +1,0 @@
-Android es un sistema operativo basado en Linux, un núcleo de sistema operativo libre, gratuito y multiplataforma, en cual
-el sistema nos permite programar aplicaciones en una variación de Java llamada Dalvik. Este sistema operativo proporciona 
-todas las interfaces necesarias para desarrollar aplicaciones que accedan a las funciones del teléfono de una forma muy sencilla
-en un lenguaje de programación muy conocido como es Java.
