@@ -12,8 +12,7 @@ class Directory_model extends CI_Model
 
 	function get_info($id_direction)
 	{
-		$query = "SELECT 'Empleados.Nombre', Puesto, Telefono, correo, 'Areas.NOMBRE' FROM Empleados, Areas   
-		WHERE Area = 'Areas.ID' AND Direccion=".$id_direction;
+		$query = "SELECT Nombre, Apellido_paterno, Apellido_materno, Area, Puesto, Telefono, correo FROM Empleados WHERE Direccion=".$id_direction;
 		$res = $this->db->query($query);
 		return $res->result();
 	}

@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
 ================================================== -->
   <meta charset="utf-8">
-  <title>Constra - Construction Html5 Template</title>
+  <title>IQT</title>
 
   <!-- Mobile Specific Metas
 ================================================== -->
@@ -41,30 +41,12 @@
         <div class="container">
           <div class="row">
               <div class="col-lg-8 col-md-8">
-                <ul class="top-info text-center text-md-left">
-                    <li><i class="fas fa-map-marker-alt"></i> <p class="info-text">9051 Constra Incorporate, USA</p>
-                    </li>
-                </ul>
+                
               </div>
               <!--/ Top info end -->
   
               <div class="col-lg-4 col-md-4 top-social text-center text-md-right">
-                <ul class="list-unstyled">
-                    <li>
-                      <a title="Facebook" href="https://facebbok.com/themefisher.com">
-                          <span class="social-icon"><i class="fab fa-facebook-f"></i></span>
-                      </a>
-                      <a title="Twitter" href="https://twitter.com/themefisher.com">
-                          <span class="social-icon"><i class="fab fa-twitter"></i></span>
-                      </a>
-                      <a title="Instagram" href="https://instagram.com/themefisher.com">
-                          <span class="social-icon"><i class="fab fa-instagram"></i></span>
-                      </a>
-                      <a title="Linkdin" href="https://github.com/themefisher.com">
-                          <span class="social-icon"><i class="fab fa-github"></i></span>
-                      </a>
-                    </li>
-                </ul>
+                
               </div>
               <!--/ Top social end -->
           </div>
@@ -81,7 +63,7 @@
           <div class="row align-items-center">
             <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
                 <a class="d-block" href="index.html">
-                  <img loading="lazy" src="images/logo.png" alt="Constra">
+                  <img loading="lazy" src="<?= base_url() ?>static/assets/img/iqt-Logo-grande-alpha-150x150.png" style="width: 200px; height: 200px ;" alt="IQT">
                 </a>
             </div><!-- logo end -->
   
@@ -90,29 +72,18 @@
                   <li>
                     <div class="info-box">
                       <div class="info-box-content">
-                          <p class="info-box-title">Call Us</p>
-                          <p class="info-box-subtitle">(+9) 847-291-4353</p>
+                          <p class="info-box-title">Llamanos</p>
+                          <p class="info-box-subtitle">(442) 210 04 07 Y 210 03 03</p>
                       </div>
                     </div>
                   </li>
                   <li>
                     <div class="info-box">
                       <div class="info-box-content">
-                          <p class="info-box-title">Email Us</p>
-                          <p class="info-box-subtitle">office@Constra.com</p>
+                          <p class="info-box-title">Correo</p>
+                          <p class="info-box-subtitle">iqt@.com</p>
                       </div>
                     </div>
-                  </li>
-                  <li class="last">
-                    <div class="info-box last">
-                      <div class="info-box-content">
-                          <p class="info-box-title">Global Certificate</p>
-                          <p class="info-box-subtitle">ISO 9001:2017</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="header-get-a-quote">
-                    <a class="btn btn-primary" href="contact.html">Get A Quote</a>
                   </li>
                 </ul><!-- Ul end -->
             </div><!-- header right end -->
@@ -125,7 +96,7 @@
   <div class="site-navigation">
     <div class="container">
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col-lg-8">
               <nav class="navbar navbar-expand-lg navbar-dark p-0">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -147,6 +118,32 @@
               </nav>
           </div>
           <!--/ Col end -->
+          <div class="col-lg-4 row justify-content-center">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-socialmedias" aria-controls="navbar-socialmedias" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div id="navbar-socialmedias" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav mr-auto">
+                    <li>
+                      <a title="Facebook" href="https://facebbok.com/themefisher.com">
+                          <img src="<?= base_url() ?>static/assets/img/botonFacebookMorado.png" style="width: 25px; height: 25px; margin-right: 10px;">
+                      </a>
+                      <a title="Twitter" href="https://twitter.com/themefisher.com">
+                          <img src="<?= base_url() ?>static/assets/img/botonTwitterMorado.png" style="width: 25px; height: 25px; margin-right: 10px;">
+                      </a>
+                      <a title="YouTube" href="https://instagram.com/themefisher.com">
+                          <img src="<?= base_url() ?>static/assets/img/botonYouTubeMorado.png" style="width: 25px; height: 25px; margin-right: 10px;">
+                      </a>
+                      <a title="Linkdin" href="https://github.com/themefisher.com">
+                          <img src="<?= base_url() ?>static/assets/img/botonRSSMorado.png" style="width: 25px; height: 25px;">
+                      </a>
+                    </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
         </div>
         <!--/ Row end -->
 
@@ -157,7 +154,7 @@
   <!--/ Navigation end -->
 </header>
 <!--/ Header end -->
-<div id="banner-area" class="banner-area" style="background-image:url(images/banner/banner1.jpg)">
+<div id="banner-area" class="banner-area" style="background-image:url(static/assets/img/header.png)">
   <div class="banner-text">
     <div class="container">
         <div class="row">

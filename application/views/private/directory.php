@@ -62,7 +62,7 @@
                             <?php foreach ($info_list as $info) : ?>
                             <tr>
                                 <td><?= $info->Nombre.' '.$info->Apellido_paterno.' '.$info->Apellido_materno ?></td>
-                                <td><?= $info->NOMBRE ?></td>
+                                <td><?= $info->Area ?></td>
                                 <td><?= $info->Puesto ?></td>
                                 <td><?= $info->Telefono ?></td>
                                 <td><?= $info->correo ?></td>

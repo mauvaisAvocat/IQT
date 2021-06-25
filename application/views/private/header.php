@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow">
-    <title>Ample Admin Lite Template by WrapPixel</title>
+    <title>IQT</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url() ?>static/plugins/images/favicon.png">
@@ -140,15 +140,9 @@ data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layo
                         <nav class="nav-link">
                             <ul>
                                 <li class="sidebar-nav">
-                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>main/user_settings" aria-expanded="false">
-                                        <i class="fas fa-user-edit" style="margin-right: 5px;"></i>
-                                        <span class="hide-menu">Configuración</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-nav">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url() ?>post/load_posts" aria-expanded="false">
                                         <i class="fas fa-marker" style="margin-right: 5px;"></i>
-                                        <span class="hide-menu">Posts</span>
+                                        <span class="hide-menu">Comunicados</span>
                                     </a>
                                 </li>
                                 <li class="sidebar-nav">

@@ -29,7 +29,7 @@ $( document ).ready(function(){
 	});     
 
 	$( '#btn-confirm-delete' ).click(function(){
-		location.href = "http://localhost/estadia/post/btn_delete/" + $( this ).attr('data-idpost');
+		location.href = "http://10.255.0.187/estadia/post/btn_delete/" + $( this ).attr('data-idpost');
 	});
 
 	$( '.btn-unable-user' ).click(function(){
@@ -38,7 +38,7 @@ $( document ).ready(function(){
 	});
 
 	$( '#btn-confirm-unable' ).click(function(){
-		location.href = "http://localhost/estadia/main/lock_user";
+		location.href = "http://10.255.0.187/estadia/main/lock_user";
 	});
 
 	$( '#btn-upload-post' ).click(function(){
@@ -46,7 +46,7 @@ $( document ).ready(function(){
 	});
 
 	$( '#btn-upload-file' ).click(function(){
-		$( '#form-file' ).attr('action', 'http://localhost/estadia/file/load_files/' + $( '.send-id-carpeta' ).attr('data-idcarpeta'));
+		$( '#form-file' ).attr('action', 'http://10.255.0.187/estadia/file/load_files/' + $( '.send-id-carpeta' ).attr('data-idcarpeta'));
 		$( '#form-file' ).submit();
 	});
 
@@ -68,11 +68,11 @@ $( document ).ready(function(){
 	});
 
 	$( '.send-id-carpeta' ).click(function(){
-		location.href = "http://localhost/estadia/file/show_files/" + $( this ).attr('data-idcarpeta');
+		location.href = "http://10.255.0.187/estadia/file/show_files/" + $( this ).attr('data-idcarpeta');
 	});
 
 	$( '.url-direction' ).click(function(){
-		location.href = "http://localhost/estadia/main/directory/" + $( this ).attr('data-iddirection');
+		location.href = "http://10.255.0.187/estadia/main/directory/" + $( this ).attr('data-iddirection');
 	});
     
 });

@@ -227,7 +227,7 @@ a:focus {
 }
 
 .bg-overlay:after {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgb(53, 57, 59);
   z-index: 0;
   position: absolute;
   content: '';
@@ -577,7 +577,7 @@ a[href^=tel] {
 ================================================== */
 .top-bar {
   padding: 8px 0;
-  background: #9B59B6;
+  background: #7b13a3;
   position: relative;
 }
 
@@ -2462,7 +2462,7 @@ img.testimonial-thumb {
 /* Footer about us */
 .footer-logo {
   margin-bottom: 25px;
-  max-height: 35px;
+  max-height: 300px;
 }
 
 /* Footer social */
